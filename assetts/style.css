@@ -6,21 +6,60 @@ html {
    height: 100%; /* Faz o body ocupar toda a altura da janela */
    background-color: #111; /* Cor de fundo escura */
    color: white; /* Cor padrão do texto */
-   font-family: Arial, sans-serif; /* Fonte do texto */
+   font-family: "Inter", sans-serif; /* Fonte do texto */
    overflow: hidden; /* Impede que apareçam barras de rolagem */
 }
 
 #menu {
+   display: flex; /* Usa flexbox para layout */
+   justify-content: center; /* Centraliza os itens horizontalmente */
+   align-items: center; /* Centraliza os itens verticalmente */
    background-color: #000; /* Cor de fundo do menu */
+   justify-content: space-around;
+   height: 80px;
    padding: 10px; /* Espaçamento interno do menu */
    text-align: center; /* Centraliza o texto do menu */
-   font-size: 18px; /* Tamanho da fonte do menu */
+   font-size: 20px; /* Tamanho da fonte do menu */
 }
+/* Estiliza a lista de links do menu */
+#menu ul {
+   list-style: none; /* Remove os marcadores da lista */
+   display: flex; /* Coloca os itens lado a lado (horizontalmente) */
+   gap: 30px; /* Espaço entre os itens */
+   padding: 0; /* Remove o espaçamento interno padrão */
+   margin: 0; /* Remove o espaçamento externo padrão */
+}
+/* Estiliza os links do menu */
+#menu a {
+   position: relative; /* Permite posicionar elementos filhos de forma absoluta */
+   text-decoration: none; /* Remove o sublinhado padrão dos links */
+   color: #000; /* Define a cor do texto como preto */
+   font-weight: bold; /* Deixa o texto em negrito */
+   padding: 5px 0; /* Espaço acima e abaixo do texto */
+   color: white; /* Cor dos links */
+   font-size: 20px; /* Tamanho da fonte dos links */
+}
+/* Cria a linha animada abaixo do link usando um pseudo-elemento */
+#menu a::after {
+   content: ""; /* Cria um conteúdo vazio para a linha */
+   position: absolute; /* Posiciona a linha em relação ao link */
+   left: 0; /* Começa do lado esquerdo do link */
+   bottom: 0; /* Posiciona a linha na parte inferior do link */
+   height: 2px; /* Define a espessura da linha */
+   width: 0%; /* A linha começa invisível (sem largura) */
+   background-color: white; /* Cor da linha (branco) */
+   transition: width 0.4s ease-in-out; /* Anima a largura da linha ao passar o mouse */
+}
+/* Quando o mouse passa sobre o link, a linha cresce até 100% da largura */
+#menu a:hover::after {
+   width: 100%; /* A linha se estende por todo o texto do link */
+}
+
 /* Estilo do container das partículas */
 #particles-js {
    position: relative; /* Necessário para limitar o canvas das partículas */
    width: 100%; /* Ocupa toda a largura da tela */
-   height: 50vh; /* Ocupa metade da altura da tela (viewport height) */
+   height: 65vh; /* Ocupa 65% da altura da tela (viewport height) */
    background-color: #000; /* Fundo preto para destacar as partículas */
    overflow: hidden; /* Impede as partículas de saírem da área */
    z-index: 1; /* Mantém o container no fundo */
@@ -34,4 +73,40 @@ html {
    transform: translate(-50%, -50%); /* Corrige o alinhamento central */
    text-align: center; /* Centraliza o texto */
    z-index: 2; /* Coloca o texto acima das partículas */
+}
+.frase {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); /* centraliza na tela */
+   text-align: center;
+   z-index: 1; /* garante que o texto fica acima das partículas */
+}
+
+/* ===== ANIMAÇÃO DE DIGITAÇÃO ===== */
+.frase h1 {
+   color: #fff;
+   font-size: 4.8rem;
+   border-right: 3px solid #00b4d8; /* cursor piscando */
+   white-space: nowrap; /* impede quebra de linha */
+   overflow: hidden; /* esconde o texto enquanto "digita" */
+   width: 0; /* começa invisível */
+   animation: digitar 4s steps(50) forwards, piscar 0.7s infinite;
+}
+
+/* ===== Animação de digitar ===== */
+@keyframes digitar {
+   from {
+      width: 0;
+   }
+   to {
+      width: 100%;
+   }
+}
+
+/* ===== Cursor piscando ===== */
+@keyframes piscar {
+   50% {
+      border-color: transparent;
+   }
 }

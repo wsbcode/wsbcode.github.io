@@ -110,7 +110,7 @@ if (typeof particlesJS !== "undefined") {
    const container = document.getElementById("particles-js");
 
    // Aplica um fundo degradê escuro como alternativa
-   // Assim, mesmo sem partículas, a página continua bonita
+   // Assim, mesmo sem partículas, a página continua visualmente agradável
    container.style.backgroundImage = "radial-gradient(circle at center, #111 0%, #000 100%)";
    container.style.backgroundSize = "cover"; // Ajusta para preencher o espaço
    container.style.backgroundPosition = "center"; // Centraliza o degradê
