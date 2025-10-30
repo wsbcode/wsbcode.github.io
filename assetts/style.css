@@ -1,112 +1,254 @@
-/* Define regras para todo o corpo da página */
+/* =========================================
+   1️⃣ ESTILOS GERAIS DA PÁGINA
+   ========================================= */
+
+/* Aplica estilos gerais para todo o HTML e body */
 body,
 html {
-   margin: 0; /* Remove as margens padrão do navegador */
+   margin: 0; /* Remove a margem padrão do navegador */
    padding: 0; /* Remove o espaçamento interno padrão */
-   height: 100%; /* Faz o body ocupar toda a altura da janela */
-   background-color: #111; /* Cor de fundo escura */
+   height: 100%; /* Faz o body ocupar toda a altura da tela */
+   background-color: #111; /* Cor de fundo escura padrão */
    color: white; /* Cor padrão do texto */
-   font-family: "Inter", sans-serif; /* Fonte do texto */
-   overflow: hidden; /* Impede que apareçam barras de rolagem */
+   font-family: "Inter", sans-serif; /* Fonte padrão para o texto */
+   overflow: hidden; /* Impede que barras de rolagem apareçam */
 }
+
+/* =========================================
+   2️⃣ MENU PRINCIPAL (DESKTOP)
+   ========================================= */
 
 #menu {
-   display: flex; /* Usa flexbox para layout */
-   justify-content: center; /* Centraliza os itens horizontalmente */
-   align-items: center; /* Centraliza os itens verticalmente */
-   background-color: #000; /* Cor de fundo do menu */
-   justify-content: space-around;
-   height: 80px;
-   padding: 10px; /* Espaçamento interno do menu */
-   text-align: center; /* Centraliza o texto do menu */
-   font-size: 20px; /* Tamanho da fonte do menu */
-}
-/* Estiliza a lista de links do menu */
-#menu ul {
-   list-style: none; /* Remove os marcadores da lista */
-   display: flex; /* Coloca os itens lado a lado (horizontalmente) */
-   gap: 30px; /* Espaço entre os itens */
-   padding: 0; /* Remove o espaçamento interno padrão */
-   margin: 0; /* Remove o espaçamento externo padrão */
-}
-/* Estiliza os links do menu */
-#menu a {
-   position: relative; /* Permite posicionar elementos filhos de forma absoluta */
-   text-decoration: none; /* Remove o sublinhado padrão dos links */
-   color: #000; /* Define a cor do texto como preto */
-   font-weight: bold; /* Deixa o texto em negrito */
-   padding: 5px 0; /* Espaço acima e abaixo do texto */
-   color: white; /* Cor dos links */
-   font-size: 20px; /* Tamanho da fonte dos links */
-}
-/* Cria a linha animada abaixo do link usando um pseudo-elemento */
-#menu a::after {
-   content: ""; /* Cria um conteúdo vazio para a linha */
-   position: absolute; /* Posiciona a linha em relação ao link */
-   left: 0; /* Começa do lado esquerdo do link */
-   bottom: 0; /* Posiciona a linha na parte inferior do link */
-   height: 2px; /* Define a espessura da linha */
-   width: 0%; /* A linha começa invisível (sem largura) */
-   background-color: white; /* Cor da linha (branco) */
-   transition: width 0.4s ease-in-out; /* Anima a largura da linha ao passar o mouse */
-}
-/* Quando o mouse passa sobre o link, a linha cresce até 100% da largura */
-#menu a:hover::after {
-   width: 100%; /* A linha se estende por todo o texto do link */
-}
-
-/* Estilo do container das partículas */
-#particles-js {
-   position: relative; /* Necessário para limitar o canvas das partículas */
-   width: 100%; /* Ocupa toda a largura da tela */
-   height: 65vh; /* Ocupa 65% da altura da tela (viewport height) */
-   background-color: #000; /* Fundo preto para destacar as partículas */
-   overflow: hidden; /* Impede as partículas de saírem da área */
-   z-index: 1; /* Mantém o container no fundo */
-}
-
-/* Centraliza o conteúdo (nome e descrição) dentro do container */
-#particles-js > div {
-   position: absolute; /* Permite posicionar livremente dentro da div */
-   top: 50%; /* Move o conteúdo para o meio da tela (vertical) */
-   left: 50%; /* Move o conteúdo para o meio da tela (horizontal) */
-   transform: translate(-50%, -50%); /* Corrige o alinhamento central */
+   display: flex; /* Usa flexbox para organizar os elementos em linha */
+   justify-content: space-around; /* Espaço uniforme entre os itens */
+   align-items: center; /* Centraliza verticalmente */
+   background-color: #000; /* Fundo preto */
+   height: 80px; /* Altura do menu */
+   padding: 10px; /* Espaçamento interno */
    text-align: center; /* Centraliza o texto */
-   z-index: 2; /* Coloca o texto acima das partículas */
+   font-size: 20px; /* Tamanho da fonte */
+   position: fixed; /* Fixa o menu no topo da página */
+   top: 0;
+   width: 100%; /* Largura total da tela */
+   z-index: 1000; /* Fica acima de outros elementos */
 }
+@media (max-width: 768px) {
+   #menu {
+      display: flex; /* mantém o flex */
+      justify-content: center; /* centraliza os itens horizontalmente */
+      align-items: center; /* centraliza verticalmente */
+      position: relative; /* necessário para posicionar o hambúrguer */
+   }
+
+   /* Logo centralizada */
+   .logo {
+      text-align: center;
+      flex: 1; /* ocupa o espaço necessário para empurrar o hambúrguer para a direita */
+   }
+
+   /* Hambúrguer posicionado à direita */
+   .hamburger {
+      position: absolute; /* tira do fluxo para não ser afetado pelo flex da logo */
+      right: 50px; /* distância da borda direita */
+   }
+}
+
+/* Lista de links do menu */
+#nav-links {
+   list-style: none; /* Remove os marcadores da lista */
+   display: flex; /* Organiza os links em linha */
+   gap: 30px; /* Espaço entre os links */
+   padding: 0;
+   margin: 0;
+}
+
+/* Estilo dos links */
+#nav-links a {
+   position: relative; /* Permite posicionar pseudo-elementos dentro */
+   text-decoration: none; /* Remove sublinhado padrão */
+   font-weight: bold; /* Negrito */
+   color: white; /* Cor do texto */
+   font-size: 20px;
+   padding: 5px 0;
+}
+
+/* Linha animada abaixo dos links */
+#menu a::after {
+   content: ""; /* Cria uma linha abaixo do link */
+   position: absolute; /* Posiciona em relação ao link */
+   left: 0;
+   bottom: 0;
+   height: 2px; /* Espessura da linha */
+   width: 0%; /* Começa invisível */
+   background-color: white;
+   transition: width 0.4s ease-in-out; /* Anima a largura ao passar o mouse */
+}
+#menu a:hover::after {
+   width: 100%; /* Linha se estende por todo o link ao passar o mouse */
+}
+
+/* =========================================
+   3️⃣ ÍCONE HAMBÚRGUER
+   ========================================= */
+
+.hamburger {
+   display: none; /* Esconde o botão no desktop */
+   flex-direction: column; /* Organiza as barras em coluna */
+   justify-content: space-between;
+   width: 25px; /* largura do ícone */
+   height: 18px; /* altura do ícone */
+   background: none;
+   border: none;
+   cursor: pointer; /* Cursor de clique */
+   z-index: 2000; /* Fica acima do menu */
+}
+
+/* Cada barra do hambúrguer */
+.bar {
+   height: 3px; /* espessura da barra */
+   width: 100%; /* largura total do ícone */
+   background-color: white;
+   border-radius: 5px; /* cantos arredondados */
+   transition: all 0.3s ease; /* animação ao abrir/fechar */
+}
+
+/* =========================================
+   4️⃣ VERSÃO MOBILE (TELAS <= 768px)
+   ========================================= */
+
+@media (max-width: 768px) {
+   /* Mostra o ícone do hambúrguer */
+   .hamburger {
+      display: flex;
+      width: 45px; /* largura maior para tocar com o dedo */
+      height: 32px; /* altura maior */
+   }
+
+   /* Esconde o menu inicialmente */
+   #nav-links {
+      display: none; /* só aparece quando clicado */
+      flex-direction: column; /* coloca os links em coluna */
+      align-items: center;
+      position: absolute; /* posicionamento absoluto para sobrepor conteúdo */
+      top: 80px; /* abaixo do menu */
+      right: 0;
+      width: 160px; /* largura do menu mobile */
+      background-color: #0d0d0d; /* fundo escuro */
+      padding: 15px;
+      gap: 20px; /* espaço entre os links */
+      border-radius: 8px; /* cantos arredondados */
+   }
+
+   /* Quando o menu está ativo (clicado) */
+   #nav-links.active {
+      display: flex; /* mostra os links */
+      border: none;
+      background-color: rgba(0, 0, 0, 0.7); /* fundo semi-transparente */
+      backdrop-filter: blur(6px); /* efeito de desfoque atrás */
+   }
+
+   /* Transformações do botão ao abrir o menu */
+   .hamburger.active .bar:nth-child(1) {
+      transform: rotate(45deg) translateY(7px); /* barra superior gira */
+   }
+   .hamburger.active .bar:nth-child(2) {
+      opacity: 0; /* barra do meio desaparece */
+   }
+   .hamburger.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translateY(-7px); /* barra inferior gira */
+   }
+}
+
+/* =========================================
+   5️⃣ ANIMAÇÃO DE DIGITAÇÃO DO H1
+   ========================================= */
+
+@keyframes digitar {
+   from {
+      width: 0;
+   } /* Começa invisível */
+   to {
+      width: 100%;
+   } /* Termina ocupando todo o texto */
+}
+
+@keyframes piscar {
+   50% {
+      border-color: transparent;
+   } /* Pisca o cursor */
+}
+
+/* =========================================
+   6️⃣ ESTILO DAS PARTÍCULAS
+   ========================================= */
+
+#particles-js {
+   position: relative; /* Limita o canvas */
+   width: 100%; /* ocupa toda largura */
+   height: 50vh; /* metade da altura da tela */
+   background-color: #000; /* fundo preto */
+   overflow: hidden; /* esconde partículas fora do container */
+   z-index: 1; /* fica atrás do conteúdo */
+}
+
+/* Centraliza o conteúdo dentro do container de partículas */
+#particles-js > div {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); /* centraliza perfeitamente */
+   text-align: center;
+   z-index: 2; /* conteúdo acima das partículas */
+}
+
 .frase {
    position: absolute;
    top: 50%;
    left: 50%;
-   transform: translate(-50%, -50%); /* centraliza na tela */
+   transform: translate(-50%, -50%);
    text-align: center;
-   z-index: 1; /* garante que o texto fica acima das partículas */
+   z-index: 1; /* garante que o H1 fique acima das partículas */
 }
 
-/* ===== ANIMAÇÃO DE DIGITAÇÃO ===== */
+/* H1 principal */
 .frase h1 {
    color: #fff;
-   font-size: 4.8rem;
+   font-size: 4.8rem; /* tamanho grande no desktop */
    border-right: 3px solid #00b4d8; /* cursor piscando */
-   white-space: nowrap; /* impede quebra de linha */
-   overflow: hidden; /* esconde o texto enquanto "digita" */
+   white-space: nowrap; /* não quebra linha */
+   overflow: hidden; /* esconde texto ainda não digitado */
    width: 0; /* começa invisível */
-   animation: digitar 4s steps(50) forwards, piscar 0.7s infinite;
+   animation: digitar 4s steps(50) forwards, piscar 0.7s infinite; /* digitação e cursor piscando */
 }
 
-/* ===== Animação de digitar ===== */
-@keyframes digitar {
-   from {
-      width: 0;
+/* =========================================
+   7️⃣ AJUSTES RESPONSIVOS (MOBILE)
+   ========================================= */
+
+@media (max-width: 768px) {
+   /* Altura do container maior para caber no mobile */
+   #particles-js {
+      height: 60vh;
    }
-   to {
-      width: 100%;
+
+   /* Ajustes do H1 */
+   .frase h1 {
+      font-size: 2.4rem; /* reduz o tamanho */
+      white-space: normal; /* permite quebra de linha */
+      line-height: 1.3; /* melhora legibilidade */
+      width: auto; /* ocupa espaço real */
+      animation: none; /* remove animação se necessário */
    }
 }
 
-/* ===== Cursor piscando ===== */
-@keyframes piscar {
-   50% {
-      border-color: transparent;
+/* Ajustes para celulares muito pequenos (≤480px) */
+@media (max-width: 480px) {
+   .frase h1 {
+      font-size: 1.8rem; /* ainda menor */
+      padding: 0 10px; /* distância das bordas */
+   }
+
+   #particles-js {
+      height: 70vh; /* ocupa mais altura para caber melhor */
    }
 }

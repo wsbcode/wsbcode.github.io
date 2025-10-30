@@ -1,117 +1,131 @@
 // =========================
-// Verifica se a biblioteca particlesJS carregou
+// Partículas
 // =========================
 
-// Aqui estamos checando se a função "particlesJS" existe no navegador.
-// Isso serve para garantir que a biblioteca de partículas foi carregada corretamente.
-// Se não carregou, vamos usar um fundo alternativo.
+// Verifica se a biblioteca particlesJS carregou no navegador
+// Isso evita erros caso a biblioteca não tenha sido importada corretamente
 if (typeof particlesJS !== "undefined") {
-   // =========================
-   // Configuração normal das partículas
-   // =========================
-
-   // Chamamos a função particlesJS, passando dois parâmetros:
-   // 1. O id do elemento HTML onde as partículas vão aparecer ("particles-js")
-   // 2. Um objeto com todas as configurações das partículas
+   // Chamamos a função particlesJS passando:
+   // 1º parâmetro: id do elemento HTML onde as partículas vão aparecer
+   // 2º parâmetro: objeto com todas as configurações das partículas
    particlesJS("particles-js", {
-      // Configuração das partículas
       particles: {
          // Quantidade de partículas e densidade na tela
          number: {
-            value: 80, // Quantas partículas existem na tela
-            density: {
-               enable: true, // Se a densidade deve ser considerada
-               value_area: 800, // Área virtual para calcular densidade
-            },
+            value: 80, // Quantas partículas existirão na tela
+            density: { enable: true, value_area: 800 }, // Ajusta a densidade conforme a tela
          },
 
          // Cor das partículas
-         color: { value: "#ffffff" }, // Branco
+         color: { value: "#ffffff" },
 
-         // Formato das partículas
-         shape: { type: "circle" }, // Pode ser círculo, triângulo, estrela, etc.
+         // Formato das partículas (círculo, triângulo, etc.)
+         shape: { type: "circle" },
 
          // Transparência das partículas
-         opacity: {
-            value: 0.5, // Transparência média
-            random: false, // Não varia aleatoriamente
-            anim: { enable: false }, // Sem animação de transparência
-         },
+         opacity: { value: 0.5, random: false, anim: { enable: false } },
 
          // Tamanho das partículas
-         size: {
-            value: 3, // Tamanho médio
-            random: true, // Pequena variação aleatória
-            anim: { enable: false }, // Sem animação de tamanho
-         },
+         size: { value: 3, random: true, anim: { enable: false } },
 
          // Linhas entre partículas
-         line_linked: {
-            enable: true, // Ativa as linhas
-            distance: 150, // Distância máxima para conectar partículas
-            color: "#ffffff", // Cor das linhas
-            opacity: 0.4, // Transparência das linhas
-            width: 1, // Largura das linhas
-         },
+         line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
 
          // Movimento das partículas
          move: {
-            enable: true, // Ativa movimento
-            speed: 5, // Velocidade
-            direction: "none", // Sem direção específica
-            random: false, // Movimento não aleatório
-            straight: false, // Movimento não reto
-            out_mode: "out", // Quando saem da tela, reaparecem do outro lado
-            bounce: false, // Não quica nas bordas
+            enable: true,
+            speed: 5,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
          },
       },
 
-      // Interatividade (como as partículas reagem ao usuário)
+      // Interatividade com o usuário
       interactivity: {
-         detect_on: "canvas", // Detecta interação no próprio canvas das partículas
+         detect_on: "canvas", // Detecta eventos no próprio canvas
 
-         // Eventos que interagem com o mouse
          events: {
-            onhover: {
-               enable: true, // Ativa efeito ao passar o mouse
-               mode: "repulse", // As partículas se afastam do mouse
-            },
-            onclick: {
-               enable: true, // Ativa efeito ao clicar
-               mode: "push", // Cria novas partículas ao clicar
-            },
-            resize: true, // Ajusta as partículas ao redimensionar a tela
+            onhover: { enable: true, mode: "repulse" }, // Ao passar o mouse, partículas se afastam
+            onclick: { enable: true, mode: "push" }, // Ao clicar, gera novas partículas
+            resize: true, // Ajusta partículas ao redimensionar a tela
          },
 
-         // Configurações dos efeitos de interação
          modes: {
-            repulse: {
-               distance: 200, // Distância que as partículas se afastam
-               duration: 0.4, // Tempo que leva para voltar
-            },
-            push: {
-               particles_nb: 4, // Quantas partículas novas aparecem ao clicar
-            },
+            repulse: { distance: 200, duration: 0.4 }, // Distância e tempo que partículas se afastam
+            push: { particles_nb: 4 }, // Quantas partículas novas aparecem ao clicar
          },
       },
 
-      // Detecta telas de alta resolução (como Retina)
-      retina_detect: true,
+      retina_detect: true, // Detecta telas de alta resolução
    });
 } else {
-   // =========================
-   // Fallback caso particles.js não carregue
-   // =========================
-
-   // Mostra um aviso no console para o desenvolvedor
+   // Caso a biblioteca particles.js não carregue
    console.warn("particles.js não carregou. Usando fundo degradê escuro.");
 
-   // Seleciona o container onde as partículas deveriam estar
+   // Seleciona o container de partículas
    const container = document.getElementById("particles-js");
 
-   // Aplica um fundo degradê escuro como alternativa
-   // Assim, mesmo sem partículas, a página continua visualmente agradável
+   // Aplica um fundo degradê escuro como alternativa visual
    container.style.backgroundImage = "radial-gradient(circle at center, #111 0%, #000 100%)";
-   container.style.backgroundSize = "cover"; // Ajusta para preencher o espaço
+   container.style.backgroundSize = "cover"; // Preenche todo o container
    container.style.backgroundPosition = "center"; // Centraliza o degradê
 }
+
+// =========================
+// Menu hambúrguer
+// =========================
+
+// Seleciona o botão do hambúrguer e a lista de links
+const hamburger = document.getElementById("hamburger-icon");
+const navLinks = document.getElementById("nav-links");
+
+// Adiciona evento de clique no botão do hambúrguer
+hamburger.addEventListener("click", () => {
+   // Adiciona ou remove a classe 'active' no botão e nos links
+   // Isso faz o menu abrir ou fechar no mobile
+   hamburger.classList.toggle("active");
+   navLinks.classList.toggle("active");
+});
+
+// =========================
+// Digitação do H1
+// =========================
+
+// Espera todo o conteúdo do DOM carregar antes de executar
+document.addEventListener("DOMContentLoaded", () => {
+   const el = document.getElementById("typing"); // Seleciona o h1 que vai receber a digitação
+   if (!el) return; // Se não existir, sai da função
+
+   const text = el.getAttribute("data-text") || el.textContent.trim(); // Pega o texto do atributo data-text
+   const isMobile = window.matchMedia("(max-width: 768px)").matches; // Verifica se é tela mobile
+
+   if (isMobile) {
+      // Se for mobile, inicia a animação de digitação
+      el.textContent = ""; // Limpa o conteúdo do h1 para começar do zero
+
+      // Cria o cursor piscante
+      const cursor = document.createElement("span");
+      cursor.className = "typing-cursor"; // Classe para estilizar no CSS
+      el.parentNode.appendChild(cursor); // Adiciona o cursor ao lado do h1
+
+      let i = 0; // Contador de caracteres
+      const speed = 30; // Velocidade da digitação em ms por caractere
+
+      // Função que digita caractere por caractere
+      function typeNext() {
+         if (i <= text.length - 1) {
+            el.textContent += text.charAt(i); // Adiciona o próximo caractere
+            i++;
+            setTimeout(typeNext, speed); // Chama a função novamente após 'speed' milissegundos
+         }
+      }
+
+      setTimeout(typeNext, 300); // Pequeno delay antes de iniciar
+   } else {
+      // Se for desktop, apenas mostra o texto estático
+      el.textContent = text;
+   }
+});

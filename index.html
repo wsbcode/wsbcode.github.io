@@ -10,7 +10,14 @@
    <body>
       <nav id="menu">
          <div class="logo"><h1>William Barbosa</h1></div>
-         <ul>
+         <!--Area que vai virar o menu quando for versão mobile-->
+         <button class="hamburger" id="hamburger-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+         </button>
+         <!--Links de navegação do site-->
+         <ul id="nav-links">
             <li><a href="#home">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#projetos">Projetos</a></li>
@@ -23,7 +30,7 @@
       <div id="particles-js">
          <!-- Dentro do container, temos o conteúdo visível (nome e descrição) -->
          <div class="frase">
-            <h1>Transformo ideias em sites modernos e funcionais.</h1>
+            <h1 id="typing" data-text="Transformo ideias em sites modernos e funcionais."></h1>
          </div>
       </div>
 
