@@ -8,9 +8,10 @@ html {
    margin: 0; /* Remove a margem padrão do navegador */
    padding: 0; /* Remove o espaçamento interno padrão */
    height: 100%; /* Faz o body ocupar toda a altura da tela */
-   background-color: #111; /* Cor de fundo escura padrão */
+   box-sizing: border-box; /* Inclui bordas e padding na largura/altura total dos elementos */
+   background-color: #141519; /* Cor de fundo escura padrão */
    color: white; /* Cor padrão do texto */
-   font-family: "Inter", sans-serif; /* Fonte padrão para o texto */
+   font-family: "Helvetica Neue", sans-serif; /* Fonte padrão para o texto */
    overflow: hidden; /* Impede que barras de rolagem apareçam */
 }
 
@@ -32,6 +33,27 @@ html {
    width: 100%; /* Largura total da tela */
    z-index: 1000; /* Fica acima de outros elementos */
 }
+.logo .foto {
+   /* Define o tamanho da imagem (pode ser menor aqui que o avatar do Sobre Mim) */
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   /* Garante que a imagem preencha o círculo */
+   object-fit: cover;
+   margin-right: 20px;
+   margin-top: 20px;
+}
+
+/* ==================================== */
+/* ESTILIZAÇÃO DO NOME */
+/* ==================================== */
+
+.logo h1 {
+   /* Ajuste de fonte e cor (opcional) */
+   font-size: 1.8em;
+   margin: 0; /* Remove margens padrão do h1 para um alinhamento perfeito */
+   font-weight: bold;
+}
 @media (max-width: 768px) {
    #menu {
       display: flex; /* mantém o flex */
@@ -43,9 +65,11 @@ html {
    /* Logo centralizada */
    .logo {
       text-align: center;
-      flex: 1; /* ocupa o espaço necessário para empurrar o hambúrguer para a direita */
+      flex: 01; /* ocupa o espaço necessário para empurrar o hambúrguer para a direita */
    }
-
+   .logo img {
+      margin-left: -50px;
+   }
    /* Hambúrguer posicionado à direita */
    .hamburger {
       position: absolute; /* tira do fluxo para não ser afetado pelo flex da logo */
@@ -251,4 +275,101 @@ html {
    #particles-js {
       height: 70vh; /* ocupa mais altura para caber melhor */
    }
+}
+
+/* ==================================== */
+/* ESTILIZAÇÃO DA SEÇÃO #SOBRE */
+/* ==================================== */
+
+#sobre {
+   padding: 60px 20px;
+}
+
+#sobre .container {
+   max-width: 800px;
+   width: 90%;
+   margin: 0 auto;
+   /* Centraliza todo o conteúdo dentro do container */
+   text-align: center;
+}
+
+/* ==================================== */
+/* 2. ESTILIZAÇÃO DA FOTO (AVATAR) */
+/* ==================================== */
+
+.foto {
+   width: 160px;
+   height: 160px;
+   border-radius: 50%; /* Círculo */
+   object-fit: cover;
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+   margin: 0 auto 25px auto; /* Centraliza a foto e adiciona espaço inferior */
+   display: block; /* Garante que 'margin: auto' funcione */
+}
+
+/* ==================================== */
+/* 3. ESTILIZAÇÃO DO TEXTO (bio-texto-pt) */
+/* ==================================== */
+
+.bio-texto-pt {
+   max-width: 650px; /* Limita a largura do texto para melhor leitura */
+   margin: 0 auto; /* Centraliza o bloco de texto */
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.bio-texto-pt p {
+   font-size: 1.15em;
+   line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+   margin-bottom: 20px; /* Espaço entre os parágrafos */
+}
+
+.bio-texto-pt strong {
+   font-weight: 700;
+}
+
+/* Para o destaque com **confiáveis** use a tag <strong> como no exemplo */
+
+/* ==================================== */
+/* ESTILIZAÇÃO DA FOTO DE PERFIL */
+/* ==================================== */
+
+.foto {
+   /* Define o tamanho do avatar */
+   width: 250px;
+   height: 250px;
+
+   /* Transforma a imagem em um círculo perfeito */
+   border-radius: 50%;
+
+   /* Garante que a imagem preencha o círculo sem distorção */
+   object-fit: cover;
+
+   /* Espaçamento inferior para separar do título */
+   margin-bottom: 25px;
+
+   /* Efeito de transição suave (opcional, para interatividade futura) */
+   transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse (hover) na foto (opcional) */
+.foto:hover {
+   transform: scale(1.05); /* Pequeno zoom */
+}
+
+/* ==================================== */
+/* ESTILIZAÇÃO DO BLOCO .logo */
+/* ==================================== */
+
+.logo {
+   /* Usa Flexbox para alinhar a foto e o nome */
+   display: flex;
+
+   /* Alinha os itens (foto e nome) no centro verticalmente */
+   align-items: center;
+
+   /* Centraliza o bloco do logo na página (se ele não ocupar 100% da largura) */
+   justify-content: center; /* Centraliza o conteúdo (foto + h1) horizontalmente */
+
+   /* Define um espaçamento (opcional) */
+   padding: 20px 0;
 }
