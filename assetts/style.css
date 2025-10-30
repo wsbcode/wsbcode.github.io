@@ -11,8 +11,8 @@ html {
    box-sizing: border-box; /* Inclui bordas e padding na largura/altura total dos elementos */
    background-color: #141519; /* Cor de fundo escura padrão */
    color: white; /* Cor padrão do texto */
-   font-family: "Helvetica Neue", sans-serif; /* Fonte padrão para o texto */
-   overflow: hidden; /* Impede que barras de rolagem apareçam */
+   font-family: "Helvetica Neue", Arial, sans-serif; /* Fonte padrão para o texto */
+   scroll-behavior: smooth; /* Rolagem suave para âncoras */
 }
 
 /* =========================================
@@ -311,19 +311,19 @@ html {
 /* 3. ESTILIZAÇÃO DO TEXTO (bio-texto-pt) */
 /* ==================================== */
 
-.bio-texto-pt {
+.bio-texto {
    max-width: 650px; /* Limita a largura do texto para melhor leitura */
    margin: 0 auto; /* Centraliza o bloco de texto */
    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.bio-texto-pt p {
+.bio-texto p {
    font-size: 1.15em;
    line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
    margin-bottom: 20px; /* Espaço entre os parágrafos */
 }
 
-.bio-texto-pt strong {
+.bio-texto strong {
    font-weight: 700;
 }
 
@@ -335,8 +335,8 @@ html {
 
 .foto {
    /* Define o tamanho do avatar */
-   width: 250px;
-   height: 250px;
+   width: 200px;
+   height: 200px;
 
    /* Transforma a imagem em um círculo perfeito */
    border-radius: 50%;
@@ -359,17 +359,19 @@ html {
 /* ==================================== */
 /* ESTILIZAÇÃO DO BLOCO .logo */
 /* ==================================== */
-
 .logo {
    /* Usa Flexbox para alinhar a foto e o nome */
    display: flex;
-
-   /* Alinha os itens (foto e nome) no centro verticalmente */
    align-items: center;
-
-   /* Centraliza o bloco do logo na página (se ele não ocupar 100% da largura) */
-   justify-content: center; /* Centraliza o conteúdo (foto + h1) horizontalmente */
-
-   /* Define um espaçamento (opcional) */
+   justify-content: center;
    padding: 20px 0;
+}
+
+.bio-texto-pt {
+   /* Centraliza o bloco de texto para que não fique muito largo em telas grandes */
+   max-width: 700px;
+   margin: 0 auto;
+
+   /* 🔑 FONTE: Aplica o estilo da Helvetica Neue ou similar */
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
