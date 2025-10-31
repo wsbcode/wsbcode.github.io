@@ -1,228 +1,211 @@
-/* =========================================
+/* =========================================================
    1️⃣ ESTILOS GERAIS DA PÁGINA
-   ========================================= */
+   ========================================================= */
 
-/* Aplica estilos gerais para todo o HTML e body */
-body,
-html {
-   margin: 0; /* Remove a margem padrão do navegador */
-   padding: 0; /* Remove o espaçamento interno padrão */
-   height: 100%; /* Faz o body ocupar toda a altura da tela */
-   box-sizing: border-box; /* Inclui bordas e padding na largura/altura total dos elementos */
-   background-color: #000; /* Cor de fundo escura padrão */
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Momo+Trust+Display&display=swap");
+
+html,
+body {
+   margin: 0; /* Remove margens padrão do navegador */
+   padding: 0; /* Remove espaçamento interno padrão */
+   height: 100%; /* Faz o body ocupar toda a tela */
+   box-sizing: border-box; /* Inclui borda e padding no tamanho total */
+   background-color: #000; /* Fundo preto */
    color: white; /* Cor padrão do texto */
-   font-family: "Helvetica Neue", Arial, sans-serif; /* Fonte padrão para o texto */
-   scroll-behavior: smooth; /* Rolagem suave para âncoras */
+   font-family: "Helvetica Neue", Arial, sans-serif; /* Fonte limpa */
+   scroll-behavior: smooth; /* Rolagem suave ao clicar em âncoras */
 }
 
-/* =========================================
+/* =========================================================
    2️⃣ MENU PRINCIPAL (DESKTOP)
-   ========================================= */
-
+   ========================================================= */
 #menu {
-   display: flex; /* Usa flexbox para organizar os elementos em linha */
+   display: flex; /* Alinha os itens em linha */
    justify-content: space-around; /* Espaço uniforme entre os itens */
    align-items: center; /* Centraliza verticalmente */
    background-color: #000; /* Fundo preto */
-   height: 80px; /* Altura do menu */
-   padding: 10px; /* Espaçamento interno */
-   text-align: center; /* Centraliza o texto */
-   font-size: 20px; /* Tamanho da fonte */
-   position: fixed; /* Fixa o menu no topo da página */
+   height: 80px;
+   padding: 10px;
+   text-align: center;
+   font-size: 20px;
+   position: fixed; /* Fica sempre visível no topo */
    top: 0;
-   width: 100%; /* Largura total da tela */
-   z-index: 1000; /* Fica acima de outros elementos */
+   width: 100%;
+   z-index: 1000; /* Fica acima dos outros elementos */
 }
+
+/* ====== LOGO ====== */
+.logo {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px 0;
+}
+
 .logo .foto {
-   /* Define o tamanho da imagem (pode ser menor aqui que o avatar do Sobre Mim) */
    width: 60px;
    height: 60px;
    border-radius: 50%;
-   /* Garante que a imagem preencha o círculo */
    object-fit: cover;
    margin-right: 20px;
    margin-top: 20px;
 }
 
-/* ==================================== */
-/* ESTILIZAÇÃO DO NOME */
-/* ==================================== */
-
 .logo h1 {
-   /* Ajuste de fonte e cor (opcional) */
    font-size: 1.8em;
-   margin: 0; /* Remove margens padrão do h1 para um alinhamento perfeito */
+   margin: 0;
    font-weight: bold;
 }
-@media (max-width: 768px) {
-   #menu {
-      display: flex; /* mantém o flex */
-      justify-content: center; /* centraliza os itens horizontalmente */
-      align-items: center; /* centraliza verticalmente */
-      position: relative; /* necessário para posicionar o hambúrguer */
-   }
 
-   /* Logo centralizada */
-   .logo {
-      text-align: center;
-      flex: 01; /* ocupa o espaço necessário para empurrar o hambúrguer para a direita */
-   }
-   .logo img {
-      margin-left: -50px;
-   }
-   /* Hambúrguer posicionado à direita */
-   .hamburger {
-      position: absolute; /* tira do fluxo para não ser afetado pelo flex da logo */
-      right: 50px; /* distância da borda direita */
-   }
-}
-
-/* Lista de links do menu */
+/* ====== MENU LINKS ====== */
 #nav-links {
-   list-style: none; /* Remove os marcadores da lista */
-   display: flex; /* Organiza os links em linha */
-   gap: 30px; /* Espaço entre os links */
+   list-style: none;
+   display: flex;
+   gap: 30px;
    padding: 0;
    margin: 0;
 }
 
-/* Estilo dos links */
 #nav-links a {
-   position: relative; /* Permite posicionar pseudo-elementos dentro */
-   text-decoration: none; /* Remove sublinhado padrão */
-   font-weight: bold; /* Negrito */
-   color: white; /* Cor do texto */
+   position: relative;
+   text-decoration: none;
+   font-weight: bold;
+   color: white;
    font-size: 20px;
    padding: 5px 0;
 }
 
-/* Linha animada abaixo dos links */
+/* Linha animada ao passar o mouse */
 #menu a::after {
-   content: ""; /* Cria uma linha abaixo do link */
-   position: absolute; /* Posiciona em relação ao link */
+   content: "";
+   position: absolute;
    left: 0;
    bottom: 0;
-   height: 2px; /* Espessura da linha */
-   width: 0%; /* Começa invisível */
+   height: 2px;
+   width: 0%;
    background-color: white;
-   transition: width 0.4s ease-in-out; /* Anima a largura ao passar o mouse */
+   transition: width 0.4s ease-in-out;
 }
+
 #menu a:hover::after {
-   width: 100%; /* Linha se estende por todo o link ao passar o mouse */
+   width: 100%;
 }
 
-/* =========================================
-   3️⃣ ÍCONE HAMBÚRGUER
-   ========================================= */
-
+/* ====== ÍCONE HAMBÚRGUER ====== */
 .hamburger {
-   display: none; /* Esconde o botão no desktop */
-   flex-direction: column; /* Organiza as barras em coluna */
+   display: none; /* Só aparece no mobile */
+   flex-direction: column;
    justify-content: space-between;
-   width: 25px; /* largura do ícone */
-   height: 18px; /* altura do ícone */
+   width: 25px;
+   height: 18px;
    background: none;
    border: none;
-   cursor: pointer; /* Cursor de clique */
-   z-index: 2000; /* Fica acima do menu */
+   cursor: pointer;
+   z-index: 2000;
 }
 
-/* Cada barra do hambúrguer */
 .bar {
-   height: 3px; /* espessura da barra */
-   width: 100%; /* largura total do ícone */
+   height: 3px;
+   width: 100%;
    background-color: white;
-   border-radius: 5px; /* cantos arredondados */
-   transition: all 0.3s ease; /* animação ao abrir/fechar */
+   border-radius: 5px;
+   transition: all 0.3s ease;
 }
 
-/* =========================================
-   4️⃣ VERSÃO MOBILE (TELAS <= 768px)
-   ========================================= */
-
+/* ----- 🔹 MENU MOBILE ----- */
 @media (max-width: 768px) {
-   /* Mostra o ícone do hambúrguer */
+   #menu {
+      justify-content: center;
+      align-items: center;
+      position: relative;
+   }
+
+   .logo {
+      text-align: center;
+      flex: 1;
+   }
+
+   .logo img {
+      margin-left: -50px;
+   }
+
    .hamburger {
       display: flex;
-      width: 45px; /* largura maior para tocar com o dedo */
-      height: 32px; /* altura maior */
+      position: absolute;
+      right: 50px;
+      width: 45px;
+      height: 32px;
    }
 
-   /* Esconde o menu inicialmente */
    #nav-links {
-      display: none; /* só aparece quando clicado */
-      flex-direction: column; /* coloca os links em coluna */
+      display: none;
+      flex-direction: column;
       align-items: center;
-      position: absolute; /* posicionamento absoluto para sobrepor conteúdo */
-      top: 80px; /* abaixo do menu */
+      position: absolute;
+      top: 80px;
       right: 0;
-      width: 160px; /* largura do menu mobile */
-      background-color: #0d0d0d; /* fundo escuro */
+      width: 160px;
+      background-color: #0d0d0d;
       padding: 15px;
-      gap: 20px; /* espaço entre os links */
-      border-radius: 8px; /* cantos arredondados */
+      gap: 20px;
+      border-radius: 8px;
    }
 
-   /* Quando o menu está ativo (clicado) */
    #nav-links.active {
-      display: flex; /* mostra os links */
-      border: none;
-      background-color: rgba(0, 0, 0, 0.7); /* fundo semi-transparente */
-      backdrop-filter: blur(6px); /* efeito de desfoque atrás */
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
    }
 
-   /* Transformações do botão ao abrir o menu */
+   /* Animação do hambúrguer ao clicar */
    .hamburger.active .bar:nth-child(1) {
-      transform: rotate(45deg) translateY(7px); /* barra superior gira */
+      transform: rotate(45deg) translateY(7px);
    }
    .hamburger.active .bar:nth-child(2) {
-      opacity: 0; /* barra do meio desaparece */
+      opacity: 0;
    }
    .hamburger.active .bar:nth-child(3) {
-      transform: rotate(-45deg) translateY(-7px); /* barra inferior gira */
+      transform: rotate(-45deg) translateY(-7px);
    }
 }
 
-/* =========================================
-   5️⃣ ANIMAÇÃO DE DIGITAÇÃO DO H1
-   ========================================= */
-
+/* =========================================================
+   3️⃣ ANIMAÇÃO DE DIGITAÇÃO DO H1
+   ========================================================= */
 @keyframes digitar {
    from {
       width: 0;
-   } /* Começa invisível */
+   }
    to {
       width: 100%;
-   } /* Termina ocupando todo o texto */
+   }
 }
 
 @keyframes piscar {
    50% {
       border-color: transparent;
-   } /* Pisca o cursor */
+   }
 }
 
-/* =========================================
-   6️⃣ ESTILO DAS PARTÍCULAS
-   ========================================= */
-
+/* =========================================================
+   4️⃣ SEÇÃO DE PARTÍCULAS E FRASE PRINCIPAL
+   ========================================================= */
 #particles-js {
-   position: relative; /* Limita o canvas */
-   width: 100%; /* ocupa toda largura */
-   height: 50vh; /* metade da altura da tela */
-   background-color: #000; /* fundo preto */
-   overflow: hidden; /* esconde partículas fora do container */
-   z-index: 1; /* fica atrás do conteúdo */
+   position: relative;
+   width: 100%;
+   height: 60vh;
+   background-color: #000;
+   overflow: hidden;
+   z-index: 1;
 }
 
-/* Centraliza o conteúdo dentro do container de partículas */
 #particles-js > div {
    position: absolute;
    top: 50%;
    left: 50%;
-   transform: translate(-50%, -50%); /* centraliza perfeitamente */
+   transform: translate(-50%, -50%);
    text-align: center;
-   z-index: 2; /* conteúdo acima das partículas */
+   z-index: 2;
 }
 
 .frase {
@@ -231,254 +214,216 @@ html {
    left: 50%;
    transform: translate(-50%, -50%);
    text-align: center;
-   z-index: 1; /* garante que o H1 fique acima das partículas */
+   z-index: 1;
 }
 
-/* H1 principal */
 .frase h1 {
    color: #fff;
-   font-size: 4.8rem; /* tamanho grande no desktop */
-   border-right: 3px solid #00b4d8; /* cursor piscando */
-   white-space: nowrap; /* não quebra linha */
-   overflow: hidden; /* esconde texto ainda não digitado */
-   width: 0; /* começa invisível */
-   animation: digitar 4s steps(50) forwards, piscar 0.7s infinite; /* digitação e cursor piscando */
+   font-size: 4.8rem;
+   border-right: 3px solid #00b4d8;
+   white-space: nowrap;
+   overflow: hidden;
+   width: 0;
+   animation: digitar 4s steps(50) forwards, piscar 0.7s infinite;
 }
 
-/* =========================================
-   7️⃣ AJUSTES RESPONSIVOS (MOBILE)
-   ========================================= */
-
+/* 🔹 Responsivo (Mobile) */
 @media (max-width: 768px) {
-   /* Altura do container maior para caber no mobile */
    #particles-js {
       height: 60vh;
    }
 
-   /* Ajustes do H1 */
    .frase h1 {
-      font-size: 2.4rem; /* reduz o tamanho */
-      white-space: normal; /* permite quebra de linha */
-      line-height: 1.3; /* melhora legibilidade */
-      width: auto; /* ocupa espaço real */
-      animation: none; /* remove animação se necessário */
+      font-size: 2.4rem;
+      white-space: normal;
+      line-height: 1.3;
+      width: auto;
+      animation: none;
    }
 }
 
-/* Ajustes para celulares muito pequenos (≤480px) */
 @media (max-width: 480px) {
    .frase h1 {
-      font-size: 1.8rem; /* ainda menor */
-      padding: 0 10px; /* distância das bordas */
+      font-size: 1.8rem;
+      padding: 0 10px;
    }
-
    #particles-js {
-      height: 70vh; /* ocupa mais altura para caber melhor */
+      height: 70vh;
    }
 }
 
-/* ==================================== */
-/* ESTILIZAÇÃO DA SEÇÃO #SOBRE */
-/* ==================================== */
-
+/* =========================================================
+   5️⃣ SEÇÃO SOBRE MIM
+   ========================================================= */
 #sobre {
    padding: 60px 20px;
-   background-color: #121217; /* Fundo ligeiramente diferente para destacar */
+   background-color: #121217;
 }
 
 #sobre .container {
    max-width: 800px;
    width: 90%;
    margin: 0 auto;
-   /* Centraliza todo o conteúdo dentro do container */
    text-align: center;
-   height: auto;
 }
-
-/* ==================================== */
-/* 2. ESTILIZAÇÃO DA FOTO (AVATAR) */
-/* ==================================== */
 
 .foto {
-   width: 160px;
-   height: 160px;
-   border-radius: 50%; /* Círculo */
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
    object-fit: cover;
-   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-   margin: 0 auto 25px auto; /* Centraliza a foto e adiciona espaço inferior */
-   display: block; /* Garante que 'margin: auto' funcione */
+   margin-bottom: 25px;
+   transition: transform 0.3s ease-in-out;
 }
 
-/* ==================================== */
-/* 3. ESTILIZAÇÃO DO TEXTO (bio-texto-pt) */
-/* ==================================== */
+.foto:hover {
+   transform: scale(1.05);
+}
 
 .bio-texto {
-   max-width: 650px; /* Limita a largura do texto para melhor leitura */
-   margin: 0 auto; /* Centraliza o bloco de texto */
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   max-width: 900px;
+   margin: 0 auto;
+   font-family: "Momo Trust Display", Helvetica, Arial, sans-serif;
 }
 
 .bio-texto p {
    font-size: 1.5em;
-   line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
-   margin-bottom: 20px; /* Espaço entre os parágrafos */
+   line-height: 1.9em;
+   margin-bottom: 20px;
 }
 
 .bio-texto strong {
    font-weight: 700;
 }
 
-/* ==================================== */
-/* ESTILIZAÇÃO DA FOTO DE PERFIL */
-/* ==================================== */
+/* =========================================
+   🎯 SEÇÃO DE PROJETOS
+   ========================================= */
 
-.foto {
-   /* Define o tamanho do avatar */
-   width: 200px;
-   height: 200px;
-
-   /* Transforma a imagem em um círculo perfeito */
-   border-radius: 50%;
-
-   /* Garante que a imagem preencha o círculo sem distorção */
-   object-fit: cover;
-
-   /* Espaçamento inferior para separar do título */
-   margin-bottom: 25px;
-
-   /* Efeito de transição suave (opcional, para interatividade futura) */
-   transition: transform 0.3s ease-in-out;
+/* Espaçamento geral da seção */
+.projetos {
+   padding: 5rem 0; /* Espaço em cima e embaixo */
+   background-color: #000; /* Fundo suave para destacar a seção */
 }
 
-/* Efeito ao passar o mouse (hover) na foto (opcional) */
-.foto:hover {
-   transform: scale(1.05); /* Pequeno zoom */
+/* Centraliza o conteúdo dentro da seção */
+.container {
+   width: 90%;
+   max-width: 1200px;
+   margin: 0 auto; /* Centraliza horizontalmente */
 }
 
-/* ==================================== */
-/* ESTILIZAÇÃO DO BLOCO .logo */
-/* ==================================== */
-.logo {
-   /* Usa Flexbox para alinhar a foto e o nome */
+/* Título principal da seção */
+.titulo-secao {
+   text-align: center; /* Centraliza o texto */
+   font-size: 2rem; /* Tamanho da fonte */
+   color: #fff; /* Cor do texto */
+   margin-bottom: 3rem; /* Espaço abaixo do título */
+}
+
+/* =========================================
+   🧱 GRADE DE PROJETOS
+   ========================================= */
+.grade-projetos {
+   display: grid; /* Exibe os projetos em grade */
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   /* Cria colunas que se adaptam ao tamanho da tela */
+   gap: 2rem; /* Espaçamento entre os cartões */
+}
+
+/* =========================================
+   🪧 CARTÃO DE PROJETO
+   ========================================= */
+.cartao-projeto {
+   background-color: #121217; /* Fundo branco */
+   border-radius: 0.5rem; /* Bordas arredondadas */
+   overflow: hidden; /* Impede que o conteúdo ultrapasse o cartão */
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animações suaves */
+}
+
+/* Efeito ao passar o mouse sobre o cartão */
+.cartao-projeto:hover {
+   transform: translateY(-5px); /* Sobe levemente */
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
+}
+
+/* =========================================
+   🖼️ IMAGEM DO PROJETO
+   ========================================= */
+.imagem-projeto {
+   width: 100%;
+   height: 400px;
+   background-color: #0c0c0c; /* Cor de fundo caso a imagem não carregue */
    display: flex;
    align-items: center;
    justify-content: center;
-   padding: 20px 0;
 }
 
-.bio-texto-pt {
-   /* Centraliza o bloco de texto para que não fique muito largo em telas grandes */
-   max-width: 700px;
-   margin: 0 auto;
-
-   /* 🔑 FONTE: Aplica o estilo da Helvetica Neue ou similar */
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-/* =========================================
-   8️⃣ ESTILIZAÇÃO DA SEÇÃO PROJETOS
-   ========================================= */
-/* Container da seção de projetos */
-.latest-projects-section {
-   padding: 20px;
-   max-width: 1200px;
-   margin: 0 auto;
-}
-
-.latest-projects-section h2 {
-   font-size: 2em;
-   margin-bottom: 30px;
-   text-align: center;
-}
-
-/* Layout de Grade para os projetos */
-.projects-grid {
-   display: grid;
-   /* 3 colunas em telas grandes */
-   grid-template-columns: repeat(3, 1fr);
-   gap: 30px; /* Espaçamento entre os cards */
-}
-
-/* Estilização individual do card do projeto */
-.project-card {
-   display: flex;
-   flex-direction: column;
-   text-decoration: none;
-   color: inherit;
-   border: 1px solid #eee;
-   border-radius: 8px;
-   overflow: hidden;
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-   transform: translateY(-5px); /* Efeito de elevação */
-   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Container da Imagem */
-.project-image-container {
-   width: 100%;
-   height: 200px; /* Altura fixa para as imagens */
-   overflow: hidden;
-}
-
-.project-image {
+.imagem-projeto img {
    width: 100%;
    height: 100%;
-   object-fit: cover;
-   transition: transform 0.3s ease;
+   object-fit: cover; /* Faz a imagem preencher sem distorcer */
 }
 
-.project-card:hover .project-image {
-   transform: scale(1.05); /* Zoom na imagem */
-}
-
-/* Conteúdo do Projeto */
-.project-content {
-   padding: 15px;
-   flex-grow: 1;
-}
-
-.project-title {
-   font-size: 1.25em;
-   margin-top: 0;
-   margin-bottom: 10px;
-   line-height: 1.3;
-}
-
-.project-snippet {
-   font-size: 0.9em;
-   color: #555;
-   margin-bottom: 15px;
-}
-
-/* Metadados (Autor e Data) */
-.project-meta {
-   font-size: 0.8em;
-   color: #777;
-   padding-top: 10px;
-   border-top: 1px dashed #eee;
-}
-
-.project-author {
-   font-weight: bold;
-   margin-right: 10px;
-}
-
-/* Responsividade: 2 colunas em tablets */
-@media (max-width: 900px) {
-   .projects-grid {
-      grid-template-columns: repeat(2, 1fr);
-   }
-}
-
-/* Responsividade: 1 coluna em celulares */
-@media (max-width: 600px) {
-   .projects-grid {
-      grid-template-columns: 1fr;
-   }
-}
 /* =========================================
-   9️⃣ RODAPÉ
+   📄 CONTEÚDO DO PROJETO
    ========================================= */
+.conteudo-projeto {
+   padding: 1.5rem; /* Espaçamento interno */
+   text-align: center; /* Centraliza o texto */
+}
+
+/* Título do projeto */
+.titulo-projeto {
+   font-size: 1.3rem;
+   color: #fff;
+   margin-bottom: 1rem;
+}
+
+/* =========================================
+   🔗 LINKS DO PROJETO
+   ========================================= */
+.links-projeto {
+   display: flex;
+   justify-content: center;
+   gap: 1rem; /* Espaço entre os botões */
+}
+
+.links-projeto a {
+   text-decoration: none; /* Remove o sublinhado */
+   color: #fff; /* Cor do texto */
+   background-color: #4a4b4b; /* Cor principal */
+   padding: 0.6rem 1.2rem; /* Tamanho dos botões */
+   border-radius: 0.3rem; /* Bordas arredondadas */
+   font-weight: 500;
+   transition: background-color 0.3s ease;
+}
+
+/* Efeito hover nos botões */
+.links-projeto a:hover {
+   background-color: #6c6d6d; /* Escurece levemente ao passar o mouse */
+}
+
+/* =========================================
+   📱 VERSÃO MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+   .titulo-secao {
+      font-size: 1.8rem;
+   }
+
+   .conteudo-projeto {
+      padding: 1rem;
+   }
+
+   .links-projeto a {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+   }
+}
+
+/* =========================================================
+   7️⃣ RODAPÉ
+   ========================================================= */
+/* (Você pode adicionar seu footer aqui quando estiver pronto) */

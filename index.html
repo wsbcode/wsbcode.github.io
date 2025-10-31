@@ -8,28 +8,29 @@
    </head>
 
    <body>
-      <nav id="menu">
-         <div class="logo">
-            <img src="/assetts/img/img3.jpeg" alt="Foto de William Barbosa" class="foto" />
+      <section id="inicio">
+         <nav id="menu">
+            <div class="logo">
+               <img src="/assetts/img/img3.jpeg" alt="Foto de William Barbosa" class="foto" />
 
-            <h1>William Barbosa</h1>
-         </div>
-         <!--Area que vai virar o menu quando for versão mobile-->
-         <button class="hamburger" id="hamburger-icon">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-         </button>
-         <!--Links de navegação do site-->
-         <ul id="nav-links">
-            <li><a href="#home">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a href="#curriculo">Currículo</a></li>
-         </ul>
-      </nav>
-
+               <h1>William Barbosa</h1>
+            </div>
+            <!--Area que vai virar o menu quando for versão mobile-->
+            <button class="hamburger" id="hamburger-icon">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </button>
+            <!--Links de navegação do site-->
+            <ul id="nav-links">
+               <li><a href="#inicio">Início</a></li>
+               <li><a href="#sobre">Sobre</a></li>
+               <li><a href="#projetos">Projetos</a></li>
+               <li><a href="#contato">Contato</a></li>
+               <li><a href="#curriculo">Currículo</a></li>
+            </ul>
+         </nav>
+      </section>
       <!-- Esta div é o "container" principal do efeito de partículas -->
       <div id="particles-js">
          <!-- Dentro do container, temos o conteúdo visível (nome e descrição) -->
@@ -45,92 +46,84 @@
             <div class="bio-texto">
                <p>
                   Olá! Sou <strong>William Barbosa</strong>, um desenvolvedor web apaixonado por
-                  criar sites funcionais e visualmente atraentes.
-               </p>
-               <p>
-                  Meu foco é desenvolver soluções confiáveis e de alto desempenho que façam a
-                  diferença tanto para usuários quanto para empresas.
+                  criar sites funcionais e visualmente atraentes. Meu foco é desenvolver soluções
+                  confiáveis e de alto desempenho que façam a diferença tanto para usuários quanto
+                  para empresas.
                </p>
             </div>
          </div>
       </section>
-      <!-- Seção Meus Projetos -->
-      <section class="latest-projects-section">
-         <h2>Meus Projetos</h2>
+      <!-- =========================================
+     🎯 SEÇÃO DE PROJETOS
+     ========================================= -->
+      <section id="projetos" class="projetos">
+         <div class="container">
+            <!-- Título principal da seção -->
+            <h2 class="titulo-secao">Meus Projetos</h2>
 
-         <div class="projects-grid">
-            <a href="URL_DO_PROJETO" class="project-card">
-               <div class="project-image-container">
-                  <img
-                     src="/assetts/img/imgprojetos.png"
-                     alt="Descrição da Imagem do Projeto"
-                     class="project-image"
-                  />
-               </div>
+            <!-- Grade que organiza os cartões -->
+            <div class="grade-projetos">
+               <!-- ==========================
+              CARTÃO DE PROJETO 1
+              ========================== -->
+               <div class="cartao-projeto">
+                  <div class="imagem-projeto">
+                     <img src="/assetts/img/imgprojetos.png" alt="Imagem do Projeto 1" />
+                  </div>
 
-               <div class="project-content">
-                  <h3 class="project-title">Em construção</h3>
-                  <p class="project-snippet">
-                     Uma breve descrição sobre a finalidade e as principais tecnologias utilizadas
-                     neste projeto, incentivando o clique.
-                  </p>
-
-                  <div class="project-meta">
-                     <span class="project-author">Em construção</span>
-                     <span class="project-date">Concluído em ...</span>
+                  <!-- 📄 Conteúdo do projeto -->
+                  <div class="conteudo-projeto">
+                     <h3 class="titulo-projeto">Em construção</h3>
+                     <div class="links-projeto">
+                        <a href="https://seudominio.com/projeto1" target="_blank">Ver Projeto</a>
+                        <a href="https://github.com/seuusuario/projeto1" target="_blank"
+                           >Ver no GitHub</a
+                        >
+                     </div>
                   </div>
                </div>
-            </a>
-         </div>
-         <div class="projects-grid">
-            <a href="URL_DO_PROJETO" class="project-card">
-               <div class="project-image-container">
-                  <img
-                     src="/assetts/img/imgprojetos.png"
-                     alt="Descrição da Imagem do Projeto"
-                     class="project-image"
-                  />
-               </div>
 
-               <div class="project-content">
-                  <h3 class="project-title">Em construção</h3>
-                  <p class="project-snippet">
-                     Uma breve descrição sobre a finalidade e as principais tecnologias utilizadas
-                     neste projeto, incentivando o clique.
-                  </p>
+               <!-- ==========================
+              CARTÃO DE PROJETO 2
+              ========================== -->
+               <div class="cartao-projeto">
+                  <div class="imagem-projeto">
+                     <img src="/assetts/img/imgprojetos.png" alt="Imagem do Projeto 2" />
+                  </div>
 
-                  <div class="project-meta">
-                     <span class="project-author">Em construção</span>
-                     <span class="project-date">Concluído em ...</span>
+                  <div class="conteudo-projeto">
+                     <h3 class="titulo-projeto">Em construção</h3>
+                     <div class="links-projeto">
+                        <a href="https://seudominio.com/projeto2" target="_blank">Ver Projeto</a>
+                        <a href="https://github.com/seuusuario/projeto2" target="_blank"
+                           >Ver no GitHub</a
+                        >
+                     </div>
                   </div>
                </div>
-            </a>
-         </div>
-         <div class="projects-grid">
-            <a href="URL_DO_PROJETO" class="project-card">
-               <div class="project-image-container">
-                  <img
-                     src="/assetts/img/imgprojetos.png"
-                     alt="Descrição da Imagem do Projeto"
-                     class="project-image"
-                  />
-               </div>
 
-               <div class="project-content">
-                  <h3 class="project-title">Em construção</h3>
-                  <p class="project-snippet">
-                     Uma breve descrição sobre a finalidade e as principais tecnologias utilizadas
-                     neste projeto, incentivando o clique.
-                  </p>
+               <!-- ==========================
+              CARTÃO DE PROJETO 3
+              ========================== -->
+               <div class="cartao-projeto">
+                  <div class="imagem-projeto">
+                     <img src="/assetts/img/imgprojetos.png" alt="Imagem do Projeto 3" />
+                  </div>
 
-                  <div class="project-meta">
-                     <span class="project-author">Em construção</span>
-                     <span class="project-date">Concluído em ...</span>
+                  <div class="conteudo-projeto">
+                     <h3 class="titulo-projeto">Em construção</h3>
+                     <div class="links-projeto">
+                        <a href="https://seudominio.com/projeto3" target="_blank">Ver Projeto</a>
+                        <a href="https://github.com/seuusuario/projeto3" target="_blank"
+                           >Ver no GitHub</a
+                        >
+                     </div>
                   </div>
                </div>
-            </a>
+            </div>
          </div>
       </section>
+
       <!-- Importa a biblioteca externa que gera as partículas -->
       <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
