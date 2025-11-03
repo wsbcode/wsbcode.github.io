@@ -219,7 +219,7 @@ body {
 
 .frase h1 {
    color: #fff;
-   font-size: 4.8rem;
+   font-size: 4rem;
    border-right: 3px solid #00b4d8;
    white-space: nowrap;
    overflow: hidden;
@@ -244,7 +244,7 @@ body {
 
 @media (max-width: 480px) {
    .frase h1 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       padding: 0 10px;
    }
    #particles-js {
@@ -287,7 +287,7 @@ body {
 }
 
 .bio-texto p {
-   font-size: 1.5em;
+   font-size: 1.3em;
    line-height: 1.9em;
    margin-bottom: 20px;
 }
