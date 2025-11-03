@@ -234,7 +234,7 @@ body {
    }
 
    .frase h1 {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       white-space: normal;
       line-height: 1.3;
       width: auto;
@@ -295,9 +295,15 @@ body {
 .bio-texto strong {
    font-weight: 700;
 }
+/* 🔹 Responsivo (Mobile) */
+@media (max-width: 768px) {
+   #sobre {
+      background-color: #121217;
+   }
+}
 
 /* =========================================
-   🎯 SEÇÃO DE PROJETOS
+   SEÇÃO DE PROJETOS
    ========================================= */
 
 /* Espaçamento geral da seção */
@@ -322,7 +328,7 @@ body {
 }
 
 /* =========================================
-   🧱 GRADE DE PROJETOS
+    GRADE DE PROJETOS
    ========================================= */
 .grade-projetos {
    display: grid; /* Exibe os projetos em grade */
