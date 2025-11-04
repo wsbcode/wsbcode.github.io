@@ -91,41 +91,66 @@ hamburger.addEventListener("click", () => {
 });
 
 // =========================
-// Digitação do H1
+// Digitação do H1 e H2
 // =========================
 
 // Espera todo o conteúdo do DOM carregar antes de executar
+
+// Espera o carregamento completo do HTML antes de executar o código
 document.addEventListener("DOMContentLoaded", () => {
-   const el = document.getElementById("typing"); // Seleciona o h1 que vai receber a digitação
-   if (!el) return; // Se não existir, sai da função
+   // Seleciona os elementos H1 e H2 pelo ID
+   const h1 = document.getElementById("typing");
+   const h2 = document.getElementById("typing2");
 
-   const text = el.getAttribute("data-text") || el.textContent.trim(); // Pega o texto do atributo data-text
-   const isMobile = window.matchMedia("(max-width: 768px)").matches; // Verifica se é tela mobile
+   // Pega o texto que está dentro do atributo "data-text" de cada elemento
+   // Exemplo: <h1 data-text="Transformo ideias..."></h1>
+   const text1 = h1.getAttribute("data-text");
+   const text2 = h2.getAttribute("data-text");
 
-   if (isMobile) {
-      // Se for mobile, inicia a animação de digitação
-      el.textContent = ""; // Limpa o conteúdo do h1 para começar do zero
+   // Define a velocidade da digitação (em milissegundos por letra)
+   const speed = 50;
 
-      // Cria o cursor piscante
-      const cursor = document.createElement("span");
-      cursor.className = "typing-cursor"; // Classe para estilizar no CSS
-      el.parentNode.appendChild(cursor); // Adiciona o cursor ao lado do h1
+   // ----------------------------------------
+   // FUNÇÃO PRINCIPAL DE DIGITAÇÃO
+   // ----------------------------------------
+   function typeText(element, text, callback) {
+      element.textContent = ""; // limpa o conteúdo antes de digitar
+      let i = 0; // contador de letras
 
-      let i = 0; // Contador de caracteres
-      const speed = 30; // Velocidade da digitação em ms por caractere
-
-      // Função que digita caractere por caractere
+      // Função interna que digita letra por letra
       function typeNext() {
-         if (i <= text.length - 1) {
-            el.textContent += text.charAt(i); // Adiciona o próximo caractere
-            i++;
-            setTimeout(typeNext, speed); // Chama a função novamente após 'speed' milissegundos
+         if (i < text.length) {
+            // Adiciona uma letra por vez ao texto do elemento
+            element.textContent += text.charAt(i);
+            i++; // avança para a próxima letra
+            setTimeout(typeNext, speed); // espera um pouco e repete
+         } else {
+            // Quando terminar o texto, remove o cursor (barrinha lateral)
+            element.style.borderRight = "none";
+
+            // Se houver uma função de "continuação", chama ela
+            if (callback) callback();
          }
       }
 
-      setTimeout(typeNext, 300); // Pequeno delay antes de iniciar
-   } else {
-      // Se for desktop, apenas mostra o texto estático
-      el.textContent = text;
+      // Inicia a digitação
+      typeNext();
    }
+
+   // ----------------------------------------
+   // INÍCIO DAS ANIMAÇÕES
+   // ----------------------------------------
+
+   // Primeiro, o H1 começa a ser digitado
+   typeText(h1, text1, () => {
+      // Depois que o H1 terminar, aguarda 600ms (meio segundo)
+      // e começa a mostrar e digitar o H2
+      setTimeout(() => {
+         h2.style.opacity = "1"; // faz o H2 aparecer com suavidade
+         h2.style.transition = "opacity 0.5s ease"; // aplica o efeito de transição
+
+         // Começa a digitar o texto do H2
+         typeText(h2, text2);
+      }, 600);
+   });
 });
