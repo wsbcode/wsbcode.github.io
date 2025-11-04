@@ -6,32 +6,32 @@
 
 html,
 body {
-   margin: 0; /* Remove margens padrão do navegador */
-   padding: 0; /* Remove espaçamento interno padrão */
-   height: 100%; /* Faz o body ocupar toda a tela */
-   box-sizing: border-box; /* Inclui borda e padding no tamanho total */
-   background-color: #000; /* Fundo preto */
-   color: white; /* Cor padrão do texto */
-   font-family: "Helvetica Neue", Arial, sans-serif; /* Fonte limpa */
-   scroll-behavior: smooth; /* Rolagem suave ao clicar em âncoras */
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   box-sizing: border-box;
+   background-color: #000;
+   color: white;
+   font-family: "Helvetica Neue", Arial, sans-serif;
+   scroll-behavior: smooth;
 }
 
 /* =========================================================
    2️⃣ MENU PRINCIPAL (DESKTOP)
    ========================================================= */
 #menu {
-   display: flex; /* Alinha os itens em linha */
-   justify-content: space-around; /* Espaço uniforme entre os itens */
-   align-items: center; /* Centraliza verticalmente */
-   background-color: #000; /* Fundo preto */
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   background-color: #000;
    height: 80px;
    padding: 10px;
    text-align: center;
    font-size: 20px;
-   position: fixed; /* Fica sempre visível no topo */
+   position: fixed;
    top: 0;
    width: 100%;
-   z-index: 1000; /* Fica acima dos outros elementos */
+   z-index: 1000;
 }
 
 /* ====== LOGO ====== */
@@ -111,7 +111,28 @@ body {
    transition: all 0.3s ease;
 }
 
-/* ----- 🔹 MENU MOBILE ----- */
+/* ----- 🔹 RESPONSIVIDADE (TABLET / DESKTOP MENOR: 769px a 1200px) ----- */
+@media (min-width: 769px) and (max-width: 1200px) {
+   #menu {
+      height: 70px; /* Reduz a altura do menu */
+      padding: 0 30px; /* Adiciona padding lateral para telas menores */
+      justify-content: space-between; /* Melhor distribuição no tablet/desktop menor */
+   }
+
+   #nav-links {
+      gap: 20px; /* Reduz o espaço entre os links */
+   }
+
+   #nav-links a {
+      font-size: 18px; /* Reduz o tamanho da fonte */
+   }
+
+   .logo h1 {
+      font-size: 1.6em; /* Reduz o tamanho do logo */
+   }
+}
+
+/* ----- 🔹 MENU MOBILE (abaixo de 768px) ----- */
 @media (max-width: 768px) {
    #menu {
       justify-content: center;
@@ -218,7 +239,21 @@ body {
       border-color: transparent;
    }
 }
-/* ====== 🔹 RESPONSIVIDADE MOBILE ====== */
+
+/* ----- 🔹 RESPONSIVIDADE (TABLET / DESKTOP MENOR: 769px a 1200px) ----- */
+@media (min-width: 769px) and (max-width: 1200px) {
+   #particles-js {
+      height: 55vh; /* Ajuste sutil na altura */
+   }
+   .frase h1 {
+      font-size: 2.8rem; /* Reduz um pouco o título */
+   }
+   .frase h2 {
+      font-size: 1.6rem; /* Reduz um pouco o subtítulo */
+   }
+}
+
+/* ====== 🔹 RESPONSIVIDADE MOBILE (abaixo de 768px) ====== */
 @media (max-width: 768px) {
    #particles-js {
       height: 50vh; /* reduz altura pra caber melhor */
@@ -257,8 +292,8 @@ body {
 }
 
 .foto {
-   width: 200px;
-   height: 200px;
+   width: 300px;
+   height: 300px;
    border-radius: 50%;
    object-fit: cover;
    margin-bottom: 25px;
@@ -283,63 +318,80 @@ body {
 .bio-texto strong {
    font-weight: 700;
 }
-/* 🔹 Responsivo (Mobile) */
+
+/* ----- 🔹 RESPONSIVIDADE (TABLET / DESKTOP MENOR: 769px a 1200px) ----- */
+@media (min-width: 769px) and (max-width: 1200px) {
+   #sobre {
+      padding: 50px 20px; /* Reduz o padding */
+   }
+
+   .bio-texto p {
+      font-size: 1.3em; /* Reduz o tamanho da fonte */
+      line-height: 1.7em;
+   }
+}
+
+/* 🔹 Responsivo (Mobile: abaixo de 768px) */
 @media (max-width: 768px) {
    #sobre {
       background-color: #121217;
+      padding: 40px 15px; /* Reduz o padding no mobile */
+   }
+   .bio-texto p {
+      font-size: 1.1em; /* Ajuste para mobile */
+      line-height: 1.6em;
    }
 }
 
 /* =========================================
-   SEÇÃO DE PROJETOS
+   6️⃣ SEÇÃO DE PROJETOS
    ========================================= */
 
 /* Espaçamento geral da seção */
 .projetos {
-   padding: 5rem 0; /* Espaço em cima e embaixo */
-   background-color: #000; /* Fundo suave para destacar a seção */
+   padding: 5rem 0;
+   background-color: #000;
 }
 
 /* Centraliza o conteúdo dentro da seção */
 .container {
    width: 90%;
    max-width: 1200px;
-   margin: 0 auto; /* Centraliza horizontalmente */
+   margin: 0 auto;
 }
 
 /* Título principal da seção */
 .titulo-secao {
-   text-align: center; /* Centraliza o texto */
-   font-size: 2rem; /* Tamanho da fonte */
-   color: #fff; /* Cor do texto */
-   margin-bottom: 3rem; /* Espaço abaixo do título */
+   text-align: center;
+   font-size: 2rem;
+   color: #fff;
+   margin-bottom: 3rem;
 }
 
 /* =========================================
     GRADE DE PROJETOS
    ========================================= */
 .grade-projetos {
-   display: grid; /* Exibe os projetos em grade */
+   display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-   /* Cria colunas que se adaptam ao tamanho da tela */
-   gap: 2rem; /* Espaçamento entre os cartões */
+   gap: 2rem;
 }
 
 /* =========================================
    🪧 CARTÃO DE PROJETO
    ========================================= */
 .cartao-projeto {
-   background-color: #121217; /* Fundo branco */
-   border-radius: 0.5rem; /* Bordas arredondadas */
-   overflow: hidden; /* Impede que o conteúdo ultrapasse o cartão */
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
-   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animações suaves */
+   background-color: #121217;
+   border-radius: 0.5rem;
+   overflow: hidden;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efeito ao passar o mouse sobre o cartão */
 .cartao-projeto:hover {
-   transform: translateY(-5px); /* Sobe levemente */
-   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Aumenta a sombra */
+   transform: translateY(-5px);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* =========================================
@@ -348,7 +400,7 @@ body {
 .imagem-projeto {
    width: 100%;
    height: 400px;
-   background-color: #0c0c0c; /* Cor de fundo caso a imagem não carregue */
+   background-color: #0c0c0c;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -357,15 +409,15 @@ body {
 .imagem-projeto img {
    width: 100%;
    height: 100%;
-   object-fit: cover; /* Faz a imagem preencher sem distorcer */
+   object-fit: cover;
 }
 
 /* =========================================
    📄 CONTEÚDO DO PROJETO
    ========================================= */
 .conteudo-projeto {
-   padding: 1.5rem; /* Espaçamento interno */
-   text-align: center; /* Centraliza o texto */
+   padding: 1.5rem;
+   text-align: center;
 }
 
 /* Título do projeto */
@@ -381,32 +433,52 @@ body {
 .links-projeto {
    display: flex;
    justify-content: center;
-   gap: 1rem; /* Espaço entre os botões */
+   gap: 1rem;
 }
 
 .links-projeto a {
-   text-decoration: none; /* Remove o sublinhado */
-   color: #fff; /* Cor do texto */
-   background-color: #4a4b4b; /* Cor principal */
-   padding: 0.6rem 1.2rem; /* Tamanho dos botões */
-   border-radius: 0.3rem; /* Bordas arredondadas */
+   text-decoration: none;
+   color: #fff;
+   background-color: #4a4b4b;
+   padding: 0.6rem 1.2rem;
+   border-radius: 0.3rem;
    font-weight: 500;
    transition: background-color 0.3s ease;
 }
 
 /* Efeito hover nos botões */
 .links-projeto a:hover {
-   background-color: #6c6d6d; /* Escurece levemente ao passar o mouse */
+   background-color: #6c6d6d;
+}
+
+/* ----- 🔹 RESPONSIVIDADE (TABLET / DESKTOP MENOR: 769px a 1200px) ----- */
+@media (min-width: 769px) and (max-width: 1200px) {
+   /* A grade pode ter 2 colunas fixas ou usar a regra padrão, mantendo-a mais espaçada */
+   .grade-projetos {
+      grid-template-columns: repeat(2, 1fr); /* Força 2 colunas para melhor visualização */
+      gap: 1.5rem;
+   }
+   .titulo-secao {
+      font-size: 1.9rem;
+   }
+   .imagem-projeto {
+      height: 300px; /* Reduz a altura da imagem */
+   }
 }
 
 /* =========================================
-   📱 VERSÃO MOBILE
+   📱 VERSÃO MOBILE (abaixo de 768px)
    ========================================= */
 @media (max-width: 768px) {
    .titulo-secao {
       font-size: 1.8rem;
    }
-
+   .grade-projetos {
+      grid-template-columns: 1fr; /* Força 1 coluna no mobile para pilhar */
+   }
+   .imagem-projeto {
+      height: 250px; /* Mais uma redução para mobile */
+   }
    .conteudo-projeto {
       padding: 1rem;
    }
@@ -420,13 +492,13 @@ body {
 /* =========================================================
    7️⃣ RODAPÉ
    ========================================================= */
-/* (Você pode adicionar seu footer aqui quando estiver pronto) */
+
 /* =========================================
    1️⃣ ESTILOS GERAIS DO RODAPÉ
    ========================================= */
 .rodape {
-   background-color: #000; /* Cor de fundo escura */
-   color: #fff; /* Texto branco */
+   background: linear-gradient(to bottom, #2e2e2e, #000);
+   color: #fff;
    padding: 40px 20px;
    text-align: center;
    font-family: "Poppins", sans-serif;
@@ -438,7 +510,7 @@ body {
 .rodape-contatos h3 {
    font-size: 1.3rem;
    margin-bottom: 15px;
-   color: #fff; /* Azul destaque */
+   color: #fff;
 }
 
 .icones-contato {
@@ -462,13 +534,6 @@ body {
 /* =========================================
    3️⃣ ÁREA DE DIREITOS AUTORAIS
    ========================================= */
-.rodape {
-   background: linear-gradient(to bottom, #2e2e2e, #000); /* Degradê cinza → preto */
-   color: #fff; /* Texto branco */
-   padding: 40px 20px;
-   text-align: center;
-   font-family: "Poppins", sans-serif;
-}
 .rodape-direitos {
    margin-top: 30px;
    font-size: 0.9rem;
@@ -494,9 +559,15 @@ body {
    color: #666;
 }
 
+/* ----- 🔹 RESPONSIVIDADE (TABLET / DESKTOP MENOR: 769px a 1200px) ----- */
+@media (min-width: 769px) and (max-width: 1200px) {
+   .rodape {
+      padding: 30px 20px; /* Diminui um pouco o padding */
+   }
+}
+
 /* =========================================
-   4️⃣ RESPONSIVIDADE
-   (Ajustes para telas menores)
+   4️⃣ RESPONSIVIDADE (abaixo de 600px)
    ========================================= */
 @media (max-width: 600px) {
    .icones-contato {
@@ -524,7 +595,7 @@ body {
    line-height: 1.7;
    border-radius: 12px;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-   border-left: 5px solid #00b4d8; /* destaque visual */
+   border-left: 5px solid #00b4d8;
 }
 
 .politica-privacidade h2 {
@@ -557,7 +628,14 @@ body {
    color: #aaa;
 }
 
-/* Responsividade */
+/* ----- 🔹 RESPONSIVIDADE (TABLET / DESKTOP MENOR: 769px a 1200px) ----- */
+@media (min-width: 769px) and (max-width: 1200px) {
+   .politica-privacidade {
+      padding: 50px 25px; /* Ajuste o padding */
+   }
+}
+
+/* Responsividade (abaixo de 600px) */
 @media (max-width: 600px) {
    .politica-privacidade {
       padding: 40px 15px;
@@ -567,7 +645,7 @@ body {
    }
 }
 /* ==============================
-   ESTILO PARA SEÇÃO TERMOS DE USO
+   SEÇÃO TERMOS DE USO
 ============================== */
 #termos-uso {
    padding: 60px 20px;
@@ -584,7 +662,7 @@ body {
    font-family: "Arial", sans-serif;
    line-height: 1.7;
    color: #fff;
-   border-left: 5px solid #00b4d8; /* destaque visual */
+   border-left: 5px solid #00b4d8;
 }
 
 #termos-uso h2 {
@@ -621,8 +699,18 @@ body {
    text-decoration: underline;
 }
 
+/* ----- 🔹 RESPONSIVIDADE (TABLET / DESKTOP MENOR: 769px a 1200px) ----- */
+@media (min-width: 769px) and (max-width: 1200px) {
+   #termos-uso .termos-container {
+      padding: 30px; /* Ajuste o padding */
+   }
+   #termos-uso h2 {
+      font-size: 1.8em;
+   }
+}
+
 /* ==============================
-   RESPONSIVIDADE
+   RESPONSIVIDADE (abaixo de 600px)
 ============================== */
 @media (max-width: 600px) {
    #termos-uso {
