@@ -188,11 +188,11 @@ body {
       transform: rotate(-45deg) translateY(-7px);
    }
 }
-@media (min-width: 400px) {
+@media (min-width: 360px) and (max-width: 600px) {
    .hamburger {
       display: flex;
       position: absolute;
-      right: 10px;
+      right: 1px;
       width: 45px;
       height: 32px;
    }
