@@ -192,7 +192,7 @@ body {
    .hamburger {
       display: flex;
       position: absolute;
-      right: 20px;
+      right: 10px;
       width: 45px;
       height: 32px;
    }
