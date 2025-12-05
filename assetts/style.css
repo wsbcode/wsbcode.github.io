@@ -188,7 +188,7 @@ body {
       transform: rotate(-45deg) translateY(-7px);
    }
 }
-@media (min-width: 360px) {
+@media (min-width: 400px) {
    .hamburger {
       display: flex;
       position: absolute;
