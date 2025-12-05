@@ -145,10 +145,6 @@ body {
       flex: 1;
    }
 
-   .logo img {
-      margin-left: -50px;
-   }
-
    .hamburger {
       display: flex;
       position: absolute;
