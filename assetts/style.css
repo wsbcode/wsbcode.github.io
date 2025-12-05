@@ -146,13 +146,13 @@ body {
    }
 
    .logo img {
-      margin-left: -30px;
+      margin-left: -50px;
    }
 
    .hamburger {
       display: flex;
       position: absolute;
-      right: 1px;
+      right: 50px;
       width: 45px;
       height: 32px;
    }
@@ -188,7 +188,15 @@ body {
       transform: rotate(-45deg) translateY(-7px);
    }
 }
-
+@media (min-width: 360px) {
+   .hamburger {
+      display: flex;
+      position: absolute;
+      right: 1px;
+      width: 45px;
+      height: 32px;
+   }
+}
 /* =========================================================
    4️⃣ SEÇÃO DE PARTÍCULAS E FRASE PRINCIPAL
    ========================================================= */
