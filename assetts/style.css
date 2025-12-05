@@ -146,13 +146,13 @@ body {
    }
 
    .logo img {
-      margin-left: -50px;
+      margin-left: -30px;
    }
 
    .hamburger {
       display: flex;
       position: absolute;
-      right: 50px;
+      right: 20px;
       width: 45px;
       height: 32px;
    }
