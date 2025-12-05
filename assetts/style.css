@@ -185,26 +185,20 @@ body {
       transform: rotate(-45deg) translateY(-7px);
    }
 }
-@media (min-width: 360px) and (max-width: 600px) {
+@media (min-width: 390px) and (max-width: 600px) {
    .hamburger {
       display: flex;
       position: absolute;
-      right: 20px;
-      width: 45px;
-      height: 32px;
-   }
-   .frase h1 {
-      font-size: 3.2rem;
-   }
-
-   .frase h2 {
-      color: #f7f7f7;
-      font-size: 1.8rem;
-      margin-top: 15px;
-      display: block;
-      opacity: 0;
+      right: 50px;
+      width: 35px;
+      height: 25px;
    }
 }
+.logo h1 {
+   font-size: 1.4em; /* Reduz o tamanho do logo */
+   margin-right: 70px;
+}
+
 /* =========================================================
    4️⃣ SEÇÃO DE PARTÍCULAS E FRASE PRINCIPAL
    ========================================================= */
