@@ -193,10 +193,18 @@ body {
       width: 35px;
       height: 25px;
    }
-}
-.logo h1 {
-   font-size: 1.4em; /* Reduz o tamanho do logo */
-   margin-right: 70px;
+   #menu {
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   .logo h1 {
+      font-size: 1.4em; /* Reduz o tamanho do logo */
+   }
+   .logo {
+      margin-right: 80px;
+   }
 }
 
 /* =========================================================
