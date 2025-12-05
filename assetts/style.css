@@ -14,6 +14,7 @@ body {
    color: white;
    font-family: "Helvetica Neue", Arial, sans-serif;
    scroll-behavior: smooth;
+   overflow-x: hidden; /* **ESCONDE** qualquer rolagem horizontal */
 }
 
 /* =========================================================
