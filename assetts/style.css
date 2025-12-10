@@ -53,7 +53,7 @@ body {
 }
 
 .logo h1 {
-   font-size: 1.6em;
+   font-size: 25px;
    margin: 0;
 }
 
@@ -71,7 +71,7 @@ body {
    text-decoration: none;
    font-weight: bold;
    color: white;
-   font-size: 22px;
+   font-size: 20px;
    padding: 5px 0;
 }
 
@@ -241,12 +241,12 @@ body {
 
 /* Estilo individual */
 .frase h1 {
-   font-size: 3.2rem;
+   font-size: 40px;
 }
 
 .frase h2 {
    color: #f7f7f7;
-   font-size: 1.8rem;
+   font-size: 28px;
    margin-top: 15px;
    display: block;
    opacity: 0;
