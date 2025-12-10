@@ -8,7 +8,7 @@ Sinta-se à vontade para explorar e entrar em contato!
 
 ---
 
-Sobre o Projeto\*\*
+Sobre o Projeto\*\
 
 Este portfólio foi desenvolvido com o objetivo de:
 
