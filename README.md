@@ -12,13 +12,11 @@ Sobre o Projeto\*\
 
 Este portfólio foi desenvolvido com o objetivo de:
 
--  Apresentar meus principais projetos e contribuições.
--  Demonstrar minhas competências técnicas.
--  Servir como um ponto de contato e centralizador da minha presença online.
+- Apresentar meus principais projetos e contribuições.
+- Demonstrar minhas competências técnicas.
+- Servir como um ponto de contato e centralizador da minha presença online.
 
 Tecnologias Utilizadas\*\*
 
-Liste aqui as principais tecnologias que você usou para construir este portfólio.
-
--  **Linguagens:** HTML5, CSS3, JavaScript (ES6+)
--  **Ferramentas:** GitHub Pages
+- **Linguagens:** HTML5, CSS3, JavaScript (ES6+)
+- **Ferramentas:** GitHub Pages
