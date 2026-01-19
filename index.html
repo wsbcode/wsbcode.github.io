@@ -1,186 +1,545 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
    <head>
+      <!-- ==========================================
+         META TAGS E CONFIGURAÇÕES BÁSICAS
+         ========================================== -->
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>William Barbosa | Portfólio Desenvolvedor Web</title>
-      <link rel="stylesheet" href="./assetts/style.css" />
+      <meta
+         name="description"
+         content="Portfólio de desenvolvedor web front-end especializado em HTML, CSS e JavaScript"
+      />
+      <meta name="author" content="Seu Nome" />
+
+      <!-- Título da página que aparece na aba do navegador -->
+      <title>Portfólio | Desenvolvedor Web</title>
+
+      <!-- Link para o arquivo CSS externo -->
+      <link rel="stylesheet" href="style.css" />
+
+      <!-- Google Fonts - Fonte moderna para o site -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+         rel="stylesheet"
+      />
+
+      <!-- Ícones do Font Awesome para redes sociais e tecnologias -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
    </head>
-
    <body>
-      <!-- =========================================
-      SEÇÃO INICIAL / MENU
-     ========================================= -->
-      <section id="inicio">
-         <nav id="menu">
-            <div class="logo">
-               <img src="/assetts/img/novalogo.png" alt="Foto de William Barbosa" class="foto" />
+      <!-- ==========================================
+         HEADER - CABEÇALHO COM NAVEGAÇÃO
+         ========================================== -->
+      <header id="cabecalho" class="cabecalho">
+         <nav class="navegacao">
+            <!-- Logo com nome do desenvolvedor -->
+            <a href="#inicio" class="logo">
+               <span class="logo-simbolo">&lt;</span>
+               <span class="logo-nome">WBCode</span>
+               <span class="logo-simbolo">/&gt;</span>
+            </a>
 
-               <h1>William Barbosa</h1>
-            </div>
-            <!--Area que vai virar o menu quando for versão mobile-->
-            <button class="hamburger" id="hamburger-icon">
-               <span class="bar"></span>
-               <span class="bar"></span>
-               <span class="bar"></span>
+            <!-- Botão do menu hamburguer para mobile -->
+            <button class="menu-hamburguer" id="menuHamburguer" aria-label="Abrir menu">
+               <span class="linha-hamburguer"></span>
+               <span class="linha-hamburguer"></span>
+               <span class="linha-hamburguer"></span>
             </button>
-            <!--Links de navegação do site-->
-            <ul id="nav-links">
-               <li><a href="#inicio">Início</a></li>
-               <li><a href="#sobre">Sobre</a></li>
-               <li><a href="#projetos">Projetos</a></li>
-               <li><a href="#contato">Contato</a></li>
+
+            <!-- Links de navegação -->
+            <ul class="lista-navegacao" id="listaNavegacao">
+               <li><a href="#inicio" class="link-navegacao">Início</a></li>
+               <li><a href="#sobre" class="link-navegacao">Sobre Mim</a></li>
+               <li><a href="#projetos" class="link-navegacao">Projetos</a></li>
+               <li><a href="#habilidades" class="link-navegacao">Habilidades</a></li>
+               <li><a href="#contato" class="link-navegacao">Contato</a></li>
                <li>
-                  <a href="/src/CV/William_Barbosa.pdf" download="William Barbosa">Baixar CV</a>
+                  <a
+                     href="./curriculo/William_Barbosa.pdf"
+                     download="William_Barbosa"
+                     target="_blank"
+                     >Baixar Currículo</a
+                  >
                </li>
             </ul>
          </nav>
-      </section>
-      <!-- Esta div é o "container" principal do efeito de partículas -->
-      <div id="particles-js">
-         <!-- Dentro do container, temos o conteúdo visível (nome e descrição) -->
-         <div class="frase">
-            <h1 id="typing" data-text="Transformo ideias em sites modernos e funcionais."></h1>
-            <h2 id="typing2" data-text="Vamos transformar a sua ideia em um projeto real."></h2>
-         </div>
-      </div>
-      <!-- =========================================
-      SEÇÃO SOBRE MIM
-     ========================================= -->
-      <section id="sobre">
-         <div class="container">
-            <img src="/assetts/img/foto.png" alt="Foto de William Barbosa" class="foto" />
+      </header>
 
-            <div class="bio-texto">
-               <p>
-                  Olá! Sou <strong>William Barbosa</strong>, desenvolvedor web focado em criar sites
-                  modernos, funcionais e otimizados. Meu foco é desenvolver soluções confiáveis e de
-                  alto desempenho que façam a diferença tanto para usuários quanto para empresas.
-               </p>
+      <!-- ==========================================
+         SEÇÃO INÍCIO - HERO SECTION
+         ========================================== -->
+      <section id="inicio" class="secao-inicio">
+         <div class="conteudo-inicio">
+            <!-- Saudação inicial com animação -->
+            <p class="saudacao animacao-fadeIn">Olá, meu nome é</p>
+
+            <!-- Nome do desenvolvedor -->
+            <h1 class="titulo-principal animacao-fadeIn atraso-1">William Barbosa.</h1>
+
+            <!-- Subtítulo com descrição -->
+            <h2 class="subtitulo animacao-fadeIn atraso-2">Desenvolvedor Web Front-end</h2>
+
+            <!-- Descrição profissional -->
+            <p class="descricao-inicio animacao-fadeIn atraso-3">
+               Olá! Sou William Barbosa, desenvolvedor web focado em criar sites modernos,
+               funcionais e otimizados. Meu foco é desenvolver soluções confiáveis e de alto
+               desempenho que façam a diferença tanto para usuários quanto para empresas.
+            </p>
+
+            <!-- Botão de ação principal -->
+            <a href="#projetos" class="botao-principal animacao-fadeIn atraso-4">
+               <span>Ver Meus Projetos</span>
+               <i class="fas fa-arrow-right"></i>
+            </a>
+         </div>
+
+         <!-- Indicador de scroll -->
+         <div class="indicador-scroll">
+            <div class="mouse">
+               <div class="roda"></div>
+            </div>
+            <span>Role para baixo</span>
+         </div>
+      </section>
+
+      <!-- ==========================================
+         SEÇÃO SOBRE MIM
+         ========================================== -->
+      <section id="sobre" class="secao secao-sobre">
+         <div class="container">
+            <!-- Título da seção -->
+            <h2 class="titulo-secao">
+               <span class="numero-secao">01.</span>
+               Sobre Mim
+            </h2>
+
+            <div class="conteudo-sobre">
+               <!-- Texto sobre o desenvolvedor -->
+               <div class="texto-sobre">
+                  <p>
+                     Olá! Meu nome é <span class="destaque">William Barbosa</span> e sou um
+                     desenvolvedor web em constante evolução. Minha jornada na programação começou
+                     quando descobri o poder de criar coisas do zero usando apenas código.
+                  </p>
+                  <p>
+                     Atualmente, estou focado em aprimorar minhas habilidades em
+                     <span class="destaque">HTML</span>, <span class="destaque">CSS</span> e
+                     <span class="destaque">JavaScript</span>, as bases fundamentais do
+                     desenvolvimento web. Acredito que dominar os fundamentos é essencial antes de
+                     avançar para frameworks e bibliotecas.
+                  </p>
+                  <p>
+                     Meu objetivo é criar interfaces que não apenas funcionem perfeitamente, mas que
+                     também proporcionem uma experiência agradável e memorável para os usuários.
+                     Cada projeto é uma oportunidade de aprender algo novo.
+                  </p>
+
+                  <!-- Lista de tecnologias em estudo -->
+                  <div class="tecnologias-estudo">
+                     <p>Tecnologias que estou estudando:</p>
+                     <ul class="lista-tecnologias">
+                        <li><i class="fas fa-caret-right"></i> HTML5 Semântico</li>
+                        <li><i class="fas fa-caret-right"></i> CSS3 / Flexbox / Grid</li>
+                        <li><i class="fas fa-caret-right"></i> JavaScript ES6+</li>
+                        <li><i class="fas fa-caret-right"></i> Git & GitHub</li>
+                        <li><i class="fas fa-caret-right"></i> Tailwind CSS</li>
+                        <li><i class="fas fa-caret-right"></i> React</li>
+                        <li><i class="fas fa-caret-right"></i> TypeScript</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <!-- Imagem/Avatar do desenvolvedor -->
+               <div class="imagem-sobre">
+                  <div class="moldura-imagem">
+                     <div class="placeholder-imagem">
+                        <i class="fas fa-user-astronaut"></i>
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
       </section>
-      <!-- =========================================
-       SEÇÃO DE PROJETOS
-     ========================================= -->
-      <section id="projetos" class="projetos">
-         <div class="container">
-            <!-- Título principal da seção -->
-            <h2 class="titulo-secao">Meus Projetos</h2>
 
-            <!-- Grade que organiza os cartões -->
+      <!-- ==========================================
+         SEÇÃO PROJETOS
+         ========================================== -->
+      <section id="projetos" class="secao secao-projetos">
+         <div class="container">
+            <!-- Título da seção -->
+            <h2 class="titulo-secao">
+               <span class="numero-secao">02.</span>
+               Meus Projetos
+            </h2>
+
+            <!-- Grid de cards de projetos -->
             <div class="grade-projetos">
-               <!-- ==========================
-              CARTÃO DE PROJETO 1
-              ========================== -->
-               <div class="cartao-projeto">
-                  <div class="imagem-projeto">
-                     <img src="/assetts/img/projeto-clima.png" alt="Imagem do Projeto 1" />
+               <!-- Card Projeto 1 -->
+               <article class="card-projeto">
+                  <div class="icone-projeto">
+                     <i class="fas fa-folder-open"></i>
                   </div>
+                  <div class="links-projeto">
+                     <a href="#" class="link-icone" title="Ver no GitHub">
+                        <i class="fab fa-github"></i>
+                     </a>
+                     <a href="#" class="link-icone" title="Ver Demo">
+                        <i class="fas fa-external-link-alt"></i>
+                     </a>
+                  </div>
+                  <h3 class="titulo-projeto">🚧 Em construção</h3>
+                  <p class="descricao-projeto">
+                     Ajustando os últimos detalhes de design e lógica. Volte logo para ver o
+                     resultado final!
+                  </p>
+                  <ul class="tecnologias-projeto">
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>JavaScript</li>
+                  </ul>
+               </article>
 
-                  <!-- 📄 Conteúdo do projeto -->
-                  <div class="conteudo-projeto">
-                     <h3 class="titulo-projeto">Projeto Clima</h3>
-                     <div class="links-projeto">
-                        <a href="https://wsbcode.github.io/tempo-clima/" target="_blank"
-                           >Ver Projeto</a
-                        >
-                        <a href="https://github.com/wsbcode/tempo-clima" target="_blank"
-                           >Ver no GitHub</a
-                        >
-                     </div>
+               <!-- Card Projeto 2 -->
+               <article class="card-projeto">
+                  <div class="icone-projeto">
+                     <i class="fas fa-folder-open"></i>
                   </div>
+                  <div class="links-projeto">
+                     <a href="#" class="link-icone" title="Ver no GitHub">
+                        <i class="fab fa-github"></i>
+                     </a>
+                     <a href="#" class="link-icone" title="Ver Demo">
+                        <i class="fas fa-external-link-alt"></i>
+                     </a>
+                  </div>
+                  <h3 class="titulo-projeto">🚧 Em construção</h3>
+                  <p class="descricao-projeto">
+                     Ajustando os últimos detalhes de design e lógica. Volte logo para ver o
+                     resultado final!
+                  </p>
+                  <ul class="tecnologias-projeto">
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>JavaScript</li>
+                  </ul>
+               </article>
+
+               <!-- Card Projeto 3 -->
+               <article class="card-projeto">
+                  <div class="icone-projeto">
+                     <i class="fas fa-folder-open"></i>
+                  </div>
+                  <div class="links-projeto">
+                     <a href="#" class="link-icone" title="Ver no GitHub">
+                        <i class="fab fa-github"></i>
+                     </a>
+                     <a href="#" class="link-icone" title="Ver Demo">
+                        <i class="fas fa-external-link-alt"></i>
+                     </a>
+                  </div>
+                  <h3 class="titulo-projeto">🚧 Em construção</h3>
+                  <p class="descricao-projeto">
+                     Ajustando os últimos detalhes de design e lógica. Volte logo para ver o
+                     resultado final!
+                  </p>
+                  <ul class="tecnologias-projeto">
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>JavaScript</li>
+                  </ul>
+               </article>
+
+               <!-- Card Projeto 4 -->
+               <article class="card-projeto">
+                  <div class="icone-projeto">
+                     <i class="fas fa-folder-open"></i>
+                  </div>
+                  <div class="links-projeto">
+                     <a href="#" class="link-icone" title="Ver no GitHub">
+                        <i class="fab fa-github"></i>
+                     </a>
+                     <a href="#" class="link-icone" title="Ver Demo">
+                        <i class="fas fa-external-link-alt"></i>
+                     </a>
+                  </div>
+                  <h3 class="titulo-projeto">🚧 Em construção</h3>
+                  <p class="descricao-projeto">
+                     Ajustando os últimos detalhes de design e lógica. Volte logo para ver o
+                     resultado final!
+                  </p>
+                  <ul class="tecnologias-projeto">
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>JavaScript</li>
+                  </ul>
+               </article>
+
+               <!-- Card Projeto 5 -->
+               <article class="card-projeto">
+                  <div class="icone-projeto">
+                     <i class="fas fa-folder-open"></i>
+                  </div>
+                  <div class="links-projeto">
+                     <a href="#" class="link-icone" title="Ver no GitHub">
+                        <i class="fab fa-github"></i>
+                     </a>
+                     <a href="#" class="link-icone" title="Ver Demo">
+                        <i class="fas fa-external-link-alt"></i>
+                     </a>
+                  </div>
+                  <h3 class="titulo-projeto">🚧 Em construção</h3>
+                  <p class="descricao-projeto">
+                     Ajustando os últimos detalhes de design e lógica. Volte logo para ver o
+                     resultado final!
+                  </p>
+                  <ul class="tecnologias-projeto">
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>JavaScript</li>
+                  </ul>
+               </article>
+
+               <!-- Card Projeto 6 -->
+               <article class="card-projeto">
+                  <div class="icone-projeto">
+                     <i class="fas fa-folder-open"></i>
+                  </div>
+                  <div class="links-projeto">
+                     <a href="#" class="link-icone" title="Ver no GitHub">
+                        <i class="fab fa-github"></i>
+                     </a>
+                     <a href="#" class="link-icone" title="Ver Demo">
+                        <i class="fas fa-external-link-alt"></i>
+                     </a>
+                  </div>
+                  <h3 class="titulo-projeto">🚧 Em construção</h3>
+                  <p class="descricao-projeto">
+                     Ajustando os últimos detalhes de design e lógica. Volte logo para ver o
+                     resultado final!
+                  </p>
+                  <ul class="tecnologias-projeto">
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>JavaScript</li>
+                  </ul>
+               </article>
+            </div>
+         </div>
+      </section>
+
+      <!-- ==========================================
+         SEÇÃO HABILIDADES / SKILLS
+         ========================================== -->
+      <section id="habilidades" class="secao secao-habilidades">
+         <div class="container">
+            <!-- Título da seção -->
+            <h2 class="titulo-secao">
+               <span class="numero-secao">03.</span>
+               Habilidades
+            </h2>
+
+            <!-- Grid de habilidades -->
+            <div class="grade-habilidades">
+               <!-- Card HTML -->
+               <div class="card-habilidade">
+                  <div class="icone-habilidade">
+                     <i class="fab fa-html5"></i>
+                  </div>
+                  <h3 class="nome-habilidade">HTML5</h3>
                </div>
 
-               <!-- ==========================
-              CARTÃO DE PROJETO 2
-              ========================== -->
-               <div class="cartao-projeto">
-                  <div class="imagem-projeto">
-                     <img src="/assetts/img/imgprojetos.png" alt="Imagem do Projeto 2" />
+               <!-- Card CSS -->
+               <div class="card-habilidade">
+                  <div class="icone-habilidade">
+                     <i class="fab fa-css3-alt"></i>
                   </div>
-
-                  <div class="conteudo-projeto">
-                     <h3 class="titulo-projeto">Em construção</h3>
-                     <div class="links-projeto">
-                        <a href="https://seudominio.com/projeto2" target="_blank">Ver Projeto</a>
-                        <a href="https://github.com/seuusuario/projeto2" target="_blank"
-                           >Ver no GitHub</a
-                        >
-                     </div>
-                  </div>
+                  <h3 class="nome-habilidade">CSS3</h3>
                </div>
 
-               <!-- ==========================
-              CARTÃO DE PROJETO 3
-              ========================== -->
-               <div class="cartao-projeto">
-                  <div class="imagem-projeto">
-                     <img src="/assetts/img/imgprojetos.png" alt="Imagem do Projeto 3" />
+               <!-- Card JavaScript -->
+               <div class="card-habilidade">
+                  <div class="icone-habilidade">
+                     <i class="fab fa-js-square"></i>
                   </div>
+                  <h3 class="nome-habilidade">JavaScript</h3>
+               </div>
 
-                  <div class="conteudo-projeto">
-                     <h3 class="titulo-projeto">Em construção</h3>
-                     <div class="links-projeto">
-                        <a href="https://seudominio.com/projeto3" target="_blank">Ver Projeto</a>
-                        <a href="https://github.com/seuusuario/projeto3" target="_blank"
-                           >Ver no GitHub</a
-                        >
-                     </div>
+               <!-- Card Git -->
+               <div class="card-habilidade">
+                  <div class="icone-habilidade">
+                     <i class="fab fa-git-alt"></i>
                   </div>
+                  <h3 class="nome-habilidade">Git</h3>
+               </div>
+
+               <!-- Card GitHub -->
+               <div class="card-habilidade">
+                  <div class="icone-habilidade">
+                     <i class="fab fa-github"></i>
+                  </div>
+                  <h3 class="nome-habilidade">GitHub</h3>
+               </div>
+
+               <!-- Card Responsive -->
+               <div class="card-habilidade">
+                  <div class="icone-habilidade">
+                     <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <h3 class="nome-habilidade">Responsivo</h3>
                </div>
             </div>
          </div>
       </section>
-      <!-- =========================================
-      SEÇÃO FINAL / RODAPÉ
-     ========================================= -->
 
-      <section id="contato">
-         <footer class="rodape">
-            <!-- ==============================
-        1️⃣ ÁREA DE CONTATOS
-        ============================== -->
-            <div class="rodape-contatos">
-               <h3>Entre em Contato</h3>
-               <div class="icones-contato">
-                  <a href="https://wa.me/5571992773034" target="_blank" aria-label="WhatsApp">
-                     <img src="/assetts/icones/whatsapp.png" alt="Ícone WhatsApp" />
-                  </a>
-                  <a
-                     href="https://www.linkedin.com/in/wsbarbosa"
-                     target="_blank"
-                     aria-label="LinkedIn"
-                  >
-                     <img src="/assetts/icones/linkedin.png" alt="Ícone LinkedIn" />
-                  </a>
-                  <a href="https://github.com/wsbcode" target="_blank" aria-label="GitHub">
-                     <img src="/assetts/icones/github.png" alt="Ícone GitHub" />
-                  </a>
-                  <a href="mailto:wsbcontatos@gmail.com" target="_blank" aria-label="E-mail">
-                     <img src="/assetts/icones/email.png" alt="Ícone E-mail" />
-                  </a>
-               </div>
-            </div>
+      <!-- ==========================================
+         SEÇÃO CONTATO
+         ========================================== -->
+      <section id="contato" class="secao secao-contato">
+         <div class="container">
+            <!-- Título da seção -->
+            <h2 class="titulo-secao">
+               <span class="numero-secao">04.</span>
+               Entre em Contato
+            </h2>
 
-            <!-- ==============================
-        2️⃣ ÁREA DE DIREITOS AUTORAIS
-        ============================== -->
-            <div class="rodape-direitos">
-               <p>© 2025–present. William Barbosa. Todos os direitos reservados.</p>
-               <div class="rodape-links">
-                  <a href="/src/politica.html" target="_blank">Política de Privacidade</a>
-                  <span>|</span>
-                  <a href="/src/termos.html" target="_blank">Termos de Uso</a>
+            <div class="conteudo-contato">
+               <!-- Texto de introdução -->
+               <div class="texto-contato">
+                  <h3>Vamos Conversar!</h3>
+                  <p>
+                     Estou sempre aberto a novas oportunidades, projetos interessantes ou apenas uma
+                     conversa sobre desenvolvimento web. Se você tem uma pergunta ou quer dizer olá,
+                     ficarei feliz em responder!
+                  </p>
+
+                  <!-- Links de redes sociais -->
+                  <div class="redes-sociais">
+                     <a
+                        href="https://github.com/wsbcode"
+                        target="_blank"
+                        class="link-social"
+                        title="GitHub"
+                     >
+                        <i class="fab fa-github"></i>
+                     </a>
+                     <a
+                        href="https://www.linkedin.com/in/wsbarbosa/"
+                        target="_blank"
+                        class="link-social"
+                        title="LinkedIn"
+                     >
+                        <i class="fab fa-linkedin-in"></i>
+                     </a>
+                     <a
+                        href="https://wa.me/5571992773034"
+                        target="_blank"
+                        class="link-social"
+                        title="WhatsApp"
+                     >
+                        <i class="fab fa-whatsapp"></i>
+                     </a>
+                     <a
+                        href="mailto:wsbcontatos@gmail.com"
+                        target="_blank"
+                        class="link-social"
+                        title="Email"
+                     >
+                        <i class="fas fa-envelope"></i>
+                     </a>
+                  </div>
                </div>
+
+               <!-- Formulário de contato -->
+               <form
+                  id="formularioContato"
+                  class="formulario-contato"
+                  action="https://formspree.io/f/maqqowdj"
+                  method="POST"
+               >
+                  <!-- Campo Nome -->
+                  <div class="grupo-formulario">
+                     <label for="nome" class="rotulo-formulario">Nome</label>
+                     <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        class="campo-formulario"
+                        placeholder="Seu nome completo"
+                        required
+                     />
+                     <span class="mensagem-erro" id="erroNome"></span>
+                  </div>
+
+                  <!-- Campo Email -->
+                  <div class="grupo-formulario">
+                     <label for="email" class="rotulo-formulario">Email</label>
+                     <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="campo-formulario"
+                        placeholder="seu@email.com"
+                        required
+                     />
+                     <span class="mensagem-erro" id="erroEmail"></span>
+                  </div>
+
+                  <!-- Campo Mensagem -->
+                  <div class="grupo-formulario">
+                     <label for="mensagem" class="rotulo-formulario">Mensagem</label>
+                     <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        class="campo-formulario campo-mensagem"
+                        placeholder="Escreva sua mensagem aqui..."
+                        rows="5"
+                        required
+                     ></textarea>
+                     <span class="mensagem-erro" id="erroMensagem"></span>
+                  </div>
+
+                  <!-- Botão de Envio -->
+                  <button type="submit" class="botao-enviar" id="botaoEnviar">
+                     <span class="texto-botao">Enviar Mensagem</span>
+                     <i class="fas fa-paper-plane"></i>
+                  </button>
+
+                  <!-- Mensagem de sucesso -->
+                  <div class="mensagem-sucesso" id="mensagemSucesso">
+                     <i class="fas fa-check-circle"></i>
+                     <span>Mensagem enviada com sucesso!</span>
+                  </div>
+               </form>
             </div>
-         </footer>
+         </div>
       </section>
 
-      <!-- Importa a biblioteca externa que gera as partículas -->
-      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+      <!-- ==========================================
+         FOOTER - RODAPÉ
+         ========================================== -->
+      <footer class="rodape">
+         <div class="container">
+            <!-- Créditos -->
+            <p class="creditos">
+               Desenvolvido por
+               <a href="#inicio">WBCode — William Barbosa</a>
+            </p>
+            <p class="ano">&copy; 2024 - Todos os direitos reservados</p>
+         </div>
+      </footer>
 
-      <!-- Importa o arquivo JavaScript local, onde configuramos o efeito de partículas -->
-      <script src="./assetts/script.js"></script>
+      <!-- Botão voltar ao topo -->
+      <button id="botaoTopo" class="botao-topo" title="Voltar ao topo">
+         <i class="fas fa-chevron-up"></i>
+      </button>
+
+      <!-- Link para o arquivo JavaScript externo -->
+      <script src="script.js"></script>
    </body>
 </html>
