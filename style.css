@@ -247,6 +247,7 @@ img {
    flex-direction: column;
    justify-content: flex-start;
    padding: clamp(120px, 12vh, 180px) var(--espacamento-container) 40px;
+   margin-left: 100px;
    position: relative;
 }
 
@@ -1058,6 +1059,7 @@ img {
    .secao-inicio {
       justify-content: flex-start;
       padding: 120px 80px 60px;
+      margin-left: 0;
    }
 
    .conteudo-inicio {
