@@ -246,7 +246,7 @@ img {
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
-   padding: clamp(120px, 12vh, 180px) var(--espacamento-container) 80px;
+   padding: clamp(120px, 12vh, 180px) var(--espacamento-container) 40px;
    position: relative;
 }
 
@@ -1115,7 +1115,7 @@ img {
 
    .secao-inicio {
       justify-content: flex-start;
-      padding: 110px 50px 60px;
+      padding: 110px 50px 35px;
    }
 
    .conteudo-inicio {
@@ -1148,7 +1148,7 @@ img {
 
    .secao-inicio {
       justify-content: flex-start;
-      padding: 100px 25px 50px;
+      padding: 100px 25px 30px;
    }
 
    .conteudo-inicio {
