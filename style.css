@@ -242,17 +242,18 @@ img {
    Primeira seção com apresentação
    =========================================== */
 .secao-inicio {
-   min-height: 100vh;
+   min-height: auto;
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   padding: 0 var(--espacamento-container);
+   justify-content: flex-start;
+   padding: clamp(120px, 12vh, 180px) var(--espacamento-container) 80px;
    position: relative;
 }
 
 /* Container do conteúdo */
 .conteudo-inicio {
    max-width: 1000px;
+   padding-top: 0;
 }
 
 /* Saudação inicial */
@@ -342,40 +343,6 @@ img {
 .botao-principal:active {
    transform: translateY(0);
    box-shadow: none;
-}
-
-/* Indicador de scroll no final da hero */
-.indicador-scroll {
-   position: absolute;
-   bottom: 50px;
-   left: 50%;
-   transform: translateX(-50%);
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 10px;
-   color: var(--cor-texto-secundario);
-   font-size: 0.75rem;
-   animation: flutuar 2s ease-in-out infinite;
-}
-
-/* Mouse animado */
-.mouse {
-   width: 24px;
-   height: 40px;
-   border: 2px solid var(--cor-texto-secundario);
-   border-radius: 20px;
-   display: flex;
-   justify-content: center;
-   padding-top: 8px;
-}
-
-.roda {
-   width: 3px;
-   height: 8px;
-   background-color: var(--cor-destaque);
-   border-radius: 2px;
-   animation: rolar 1.5s ease-in-out infinite;
 }
 
 /* ===========================================
@@ -677,15 +644,26 @@ img {
 .card-habilidade:nth-child(3) .icone-habilidade {
    color: #f7df1e;
 } /* JS */
+
 .card-habilidade:nth-child(4) .icone-habilidade {
-   color: #f05032;
-} /* Git */
-.card-habilidade:nth-child(5) .icone-habilidade {
    color: #ffffff;
 } /* GitHub */
+
+.card-habilidade:nth-child(5) .icone-habilidade {
+   color: #61dafb;
+} /* React */
+
 .card-habilidade:nth-child(6) .icone-habilidade {
-   color: var(--cor-destaque);
-} /* Responsivo */
+   color: #22d3ee;
+} /* Tailwind */
+
+.card-habilidade:nth-child(7) .icone-habilidade {
+   color: #3178c6;
+} /* TypeScript */
+
+.card-habilidade:nth-child(8) .icone-habilidade {
+   color: #339933;
+} /* Node.js */
 
 /* Efeito de scale no hover do ícone */
 .card-habilidade:hover .icone-habilidade {
@@ -1036,29 +1014,6 @@ img {
    animation-delay: 0.5s;
 }
 
-/* Animação de flutuação */
-@keyframes flutuar {
-   0%,
-   100% {
-      transform: translateX(-50%) translateY(0);
-   }
-   50% {
-      transform: translateX(-50%) translateY(-10px);
-   }
-}
-
-/* Animação da roda do mouse */
-@keyframes rolar {
-   0% {
-      opacity: 1;
-      transform: translateY(0);
-   }
-   100% {
-      opacity: 0;
-      transform: translateY(10px);
-   }
-}
-
 /* Animação de pulsar (coração) */
 @keyframes pulsar {
    0%,
@@ -1100,7 +1055,12 @@ img {
    }
 
    .secao-inicio {
-      padding: 0 80px;
+      justify-content: flex-start;
+      padding: 120px 80px 60px;
+   }
+
+   .conteudo-inicio {
+      padding-top: 0;
    }
 
    /* Grid sobre mim em uma coluna */
@@ -1154,7 +1114,12 @@ img {
    }
 
    .secao-inicio {
-      padding: 0 50px;
+      justify-content: flex-start;
+      padding: 110px 50px 60px;
+   }
+
+   .conteudo-inicio {
+      padding-top: 0;
    }
 
    .titulo-secao::after {
@@ -1182,7 +1147,12 @@ img {
    }
 
    .secao-inicio {
-      padding: 0 25px;
+      justify-content: flex-start;
+      padding: 100px 25px 50px;
+   }
+
+   .conteudo-inicio {
+      padding-top: 0;
    }
 
    .saudacao {
