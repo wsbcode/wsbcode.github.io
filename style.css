@@ -351,6 +351,7 @@ img {
    =========================================== */
 .secao-sobre {
    background-color: var(--cor-fundo);
+   padding-top: 50px;
 }
 
 /* Título padrão das seções */
