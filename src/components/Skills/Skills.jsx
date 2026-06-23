@@ -1,0 +1,62 @@
+import { motion } from 'framer-motion'
+import skills from '../../data/skills'
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.06 },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+}
+
+export default function Skills() {
+  return (
+    <section id="habilidades" className="py-20 relative">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Minhas{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+              Habilidades
+            </span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
+        </motion.div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+        >
+          {skills.map((skill) => (
+            <motion.div
+              key={skill.name}
+              variants={item}
+              className="group flex flex-col items-center gap-3 p-6 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-gray-600 transition-all duration-300 cursor-default"
+            >
+              <skill.icon
+                className="text-3xl sm:text-4xl transition-transform duration-300 group-hover:scale-110"
+                style={{ color: skill.color }}
+              />
+              <span className="text-sm text-gray-400 group-hover:text-gray-200 transition-colors">
+                {skill.name}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
