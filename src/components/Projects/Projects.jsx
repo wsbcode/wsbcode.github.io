@@ -46,7 +46,7 @@ export default function Projects() {
             <motion.div
               key={project.title}
               variants={item}
-              className="group rounded-xl bg-gray-900/50 border border-gray-800 overflow-hidden hover:border-gray-700 transition-all duration-300"
+              className="group rounded-xl bg-gray-900/50 border border-gray-800 overflow-hidden hover:border-cyan-500/50 transition-all duration-300"
             >
               <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center overflow-hidden">
                 {project.image ? (

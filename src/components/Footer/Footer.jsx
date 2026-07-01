@@ -1,4 +1,4 @@
-import { FiGithub, FiLinkedin, FiMail, FiArrowUp } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiInstagram, FiFacebook, FiArrowUp } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const quickLinks = [
@@ -12,7 +12,8 @@ const socials = [
    { icon: FiGithub, href: "https://github.com/wsbcode" },
    { icon: FiLinkedin, href: "https://www.linkedin.com/in/wsbarbosa/" },
    { icon: FaWhatsapp, href: "https://wa.me/5571992773034" },
-   { icon: FiMail, href: "mailto:wsbcontatos@gmail.com" },
+    { icon: FiInstagram, href: "https://www.instagram.com/williambarbosa______" },
+    { icon: FiFacebook, href: "https://www.facebook.com/profile.php?id=61551114907013" },
 ];
 
 export default function Footer() {

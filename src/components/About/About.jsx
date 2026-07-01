@@ -78,20 +78,20 @@ export default function About() {
                   transition={{ duration: 0.5 }}
                   className="grid gap-4"
                >
-                  {highlights.map((item, i) => (
-                     <div
-                        key={i}
-                        className="flex gap-4 p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-gray-700 transition-colors"
-                     >
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
-                           <item.icon className="text-cyan-400 text-xl" />
-                        </div>
-                        <div>
-                           <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-                           <p className="text-gray-400 text-sm">{item.desc}</p>
-                        </div>
-                     </div>
-                  ))}
+                   {highlights.map((item, i) => (
+                      <div
+                         key={i}
+                         className="group flex gap-4 p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all duration-300"
+                      >
+                         <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-500/10 group-hover:bg-cyan-500/20 flex items-center justify-center transition-colors duration-300">
+                            <item.icon className="text-cyan-400 text-xl" />
+                         </div>
+                         <div>
+                            <h3 className="text-white group-hover:text-cyan-400 font-semibold mb-1 transition-colors duration-300">{item.title}</h3>
+                            <p className="text-gray-400 text-sm">{item.desc}</p>
+                         </div>
+                      </div>
+                   ))}
                </motion.div>
             </div>
          </div>

@@ -99,11 +99,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-5 h-8 border-2 border-gray-600 rounded-full flex justify-center">
-          <div className="w-1 h-2 bg-gray-400 rounded-full mt-2 animate-pulse" />
-        </div>
-      </div>
     </section>
   )
 }
