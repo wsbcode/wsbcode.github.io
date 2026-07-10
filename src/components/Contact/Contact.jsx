@@ -32,11 +32,11 @@ export default function Contact() {
             >
                <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                   Entre em{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-                     Contato
-                  </span>
-               </h2>
-               <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
+                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dark">
+                      Contato
+                   </span>
+                </h2>
+                <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-dark mx-auto rounded-full" />
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-12 items-start max-w-4xl mx-auto">
@@ -56,7 +56,7 @@ export default function Contact() {
                         id="name"
                         type="text"
                         required
-                        className="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-gray-100 placeholder-gray-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                        className="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-gray-100 placeholder-gray-600 focus:outline-none focus:border-accent-light transition-colors"
                         placeholder="Seu nome"
                      />
                   </div>
@@ -68,7 +68,7 @@ export default function Contact() {
                         id="email"
                         type="email"
                         required
-                        className="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-gray-100 placeholder-gray-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                        className="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-gray-100 placeholder-gray-600 focus:outline-none focus:border-accent-light transition-colors"
                         placeholder="seu@email.com"
                      />
                   </div>
@@ -80,13 +80,13 @@ export default function Contact() {
                         id="message"
                         rows={5}
                         required
-                        className="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-gray-100 placeholder-gray-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+                        className="w-full bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 text-gray-100 placeholder-gray-600 focus:outline-none focus:border-accent-light transition-colors resize-none"
                         placeholder="Sua mensagem..."
                      />
                   </div>
                   <button
                      type="submit"
-                     className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-semibold px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer"
+                      className="flex items-center gap-2 bg-accent hover:bg-accent-light text-gray-950 font-semibold px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer"
                   >
                      <HiPaperAirplane className="text-lg" />
                      {sent ? "Enviado!" : "Enviar Mensagem"}
@@ -112,9 +112,9 @@ export default function Contact() {
                            href={social.href}
                            target="_blank"
                            rel="noopener noreferrer"
-                           className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors group"
-                        >
-                           <div className="w-10 h-10 rounded-lg bg-gray-900/50 border border-gray-800 flex items-center justify-center group-hover:border-cyan-500/50 transition-colors">
+                            className="flex items-center gap-3 text-gray-400 hover:text-accent-light transition-colors group"
+                         >
+                            <div className="w-10 h-10 rounded-lg bg-gray-900/50 border border-gray-800 flex items-center justify-center group-hover:border-accent-light/50 transition-colors">
                               <social.icon className="text-lg" />
                            </div>
                            <span className="text-sm">{social.label}</span>

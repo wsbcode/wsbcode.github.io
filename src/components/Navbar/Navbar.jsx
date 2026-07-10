@@ -38,7 +38,7 @@ export default function Navbar() {
           href="#"
           className="text-xl font-bold tracking-tight text-white"
         >
-          WB<span className="text-cyan-400">Code</span>
+          WB<span className="text-accent">Code</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -46,7 +46,7 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className="text-sm text-gray-300 hover:text-cyan-400 transition-colors duration-200 cursor-pointer"
+              className="text-sm text-gray-300 hover:text-accent-light transition-colors duration-200 cursor-pointer"
             >
               {link.label}
             </button>
@@ -75,7 +75,7 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-left text-gray-300 hover:text-cyan-400 transition-colors py-2 text-sm cursor-pointer"
+                  className="text-left text-gray-300 hover:text-accent-light transition-colors py-2 text-sm cursor-pointer"
                 >
                   {link.label}
                 </button>

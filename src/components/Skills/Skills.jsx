@@ -26,11 +26,11 @@ export default function Skills() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Minhas{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-              Habilidades
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dark">
+               Habilidades
             </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-dark mx-auto rounded-full" />
         </motion.div>
 
         {Object.entries(skills).map(([category, categorySkills]) => (
@@ -42,7 +42,7 @@ export default function Skills() {
               transition={{ duration: 0.5 }}
               className="text-xl sm:text-2xl font-bold text-center mb-8"
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dark">
                 {category}
               </span>
             </motion.h3>
@@ -58,13 +58,13 @@ export default function Skills() {
                 <motion.div
                   key={skill.name}
                   variants={item}
-                  className="group flex flex-col items-center gap-3 p-6 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 hover:bg-cyan-500/5 transition-all duration-300 cursor-default"
+                  className="group flex flex-col items-center gap-3 p-6 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-accent-light/50 hover:bg-accent/5 transition-all duration-300 cursor-default"
                 >
                   <skill.icon
                     className="text-3xl sm:text-4xl transition-all duration-300 group-hover:scale-110"
                     style={{ color: skill.color }}
                   />
-                  <span className="text-sm text-gray-400 group-hover:text-cyan-400 transition-colors">
+                  <span className="text-sm text-gray-400 group-hover:text-accent-light transition-colors">
                     {skill.name}
                   </span>
                 </motion.div>

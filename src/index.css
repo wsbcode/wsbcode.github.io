@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-accent: #4f7a8c;
+  --color-accent-light: #6b9bb0;
+  --color-accent-dark: #3a5d6b;
+}
+
 html {
   scroll-behavior: smooth;
 }

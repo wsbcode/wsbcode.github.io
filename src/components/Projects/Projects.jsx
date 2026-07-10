@@ -28,11 +28,11 @@ export default function Projects() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Meus{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-              Projetos
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dark">
+               Projetos
             </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-dark mx-auto rounded-full" />
         </motion.div>
 
         <motion.div
@@ -46,7 +46,7 @@ export default function Projects() {
             <motion.div
               key={project.title}
               variants={item}
-              className="group rounded-xl bg-gray-900/50 border border-gray-800 overflow-hidden hover:border-cyan-500/50 transition-all duration-300"
+              className="group rounded-xl bg-gray-900/50 border border-gray-800 overflow-hidden hover:border-accent-light/50 transition-all duration-300"
             >
               <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center overflow-hidden">
                 {project.image ? (
@@ -56,7 +56,7 @@ export default function Projects() {
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
-                  <HiCode className="text-5xl text-gray-700 group-hover:text-cyan-400 transition-colors duration-300" />
+                  <HiCode className="text-5xl text-gray-700 group-hover:text-accent-light transition-colors duration-300" />
                 )}
               </div>
 
@@ -72,7 +72,7 @@ export default function Projects() {
                   {project.techs.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
+                      className="text-xs px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/20"
                     >
                       {tech}
                     </span>
@@ -93,7 +93,7 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-semibold px-4 py-2 rounded-lg transition-all duration-200"
+                    className="flex items-center gap-2 text-sm bg-accent hover:bg-accent-light text-gray-950 font-semibold px-4 py-2 rounded-lg transition-all duration-200"
                   >
                     <HiExternalLink className="text-base" />
                     Demo

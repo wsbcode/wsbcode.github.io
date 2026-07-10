@@ -13,7 +13,7 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent-dark/10 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
         <div className="flex-1 text-center md:text-left">
@@ -21,7 +21,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-cyan-400 font-mono text-sm mb-4 tracking-wider uppercase"
+            className="text-accent font-mono text-sm mb-4 tracking-wider uppercase"
           >
             Olá, meu nome é
           </motion.p>
@@ -33,7 +33,7 @@ export default function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4"
           >
             William{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-dark">
               Barbosa
             </span>
           </motion.h1>
@@ -66,14 +66,14 @@ export default function Hero() {
           >
             <button
               onClick={() => handleScroll('#projetos')}
-              className="group flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-semibold px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer"
+              className="group flex items-center gap-2 bg-accent hover:bg-accent-light text-gray-950 font-semibold px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer"
             >
               Ver Projetos
               <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={() => handleScroll('#contato')}
-              className="flex items-center gap-2 border border-gray-700 hover:border-cyan-500 text-gray-300 hover:text-cyan-400 px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer"
+              className="flex items-center gap-2 border border-gray-700 hover:border-accent-light text-gray-300 hover:text-accent-light px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer"
             >
               <HiMail className="text-lg" />
               Entrar em Contato
@@ -87,7 +87,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex-shrink-0"
         >
-          <div className="w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 p-1">
+          <div className="w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-br from-accent to-accent-dark p-1">
             <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
               <img
                 src={fotoPerfil}

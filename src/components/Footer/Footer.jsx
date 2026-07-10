@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="grid sm:grid-cols-3 gap-8 mb-8">
                <div>
                   <h3 className="text-lg font-bold text-white mb-3">
-                     WB<span className="text-cyan-400">Code</span>
+                      WB<span className="text-accent">Code</span>
                   </h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
                      Desenvolvedor Full Stack focado em criar soluções web completas com tecnologia
@@ -44,7 +44,7 @@ export default function Footer() {
                         <a
                            key={link.href}
                            href={link.href}
-                           className="text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                            className="text-sm text-gray-400 hover:text-accent-light transition-colors"
                         >
                            {link.label}
                         </a>
@@ -63,7 +63,7 @@ export default function Footer() {
                            href={social.href}
                            target="_blank"
                            rel="noopener noreferrer"
-                           className="w-10 h-10 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-200"
+                            className="w-10 h-10 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-accent-light hover:border-accent-light/50 transition-all duration-200"
                         >
                            <social.icon className="text-lg" />
                         </a>
@@ -78,7 +78,7 @@ export default function Footer() {
                </p>
                <button
                   onClick={scrollToTop}
-                  className="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-200 cursor-pointer"
+                  className="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-accent-light hover:border-accent-light/50 transition-all duration-200 cursor-pointer"
                   aria-label="Voltar ao topo"
                >
                   <FiArrowUp />
