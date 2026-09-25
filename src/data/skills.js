@@ -4,13 +4,13 @@ import {
   SiJavascript,
   SiTypescript,
   SiReact,
-  SiNodedotjs,
-  SiExpress,
-  SiMysql,
+  SiPostgresql,
+  SiSpringboot,
   SiGit,
   SiGithub,
   SiOpenai,
 } from 'react-icons/si'
+import { FaJava } from 'react-icons/fa'
 
 const skills = {
   Frontend: [
@@ -21,9 +21,9 @@ const skills = {
     { name: 'React', icon: SiReact, color: '#61DAFB' },
   ],
   Backend: [
-    { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-    { name: 'Express', icon: SiExpress, color: '#FFFFFF' },
-    { name: 'SQL', icon: SiMysql, color: '#4479A1' },
+    { name: 'Java', icon: FaJava, color: '#ED8B00' },
+    { name: 'Spring Boot', icon: SiSpringboot, color: '#6DB33F' },
+    { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
   ],
   Ferramentas: [
     { name: 'Git', icon: SiGit, color: '#F05032' },
