@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { HiArrowRight, HiMail } from "react-icons/hi";
+import { HiArrowRight, HiChatAlt2 } from "react-icons/hi";
 import fotoPerfil from "../../assets/images/fotoPerfil.jpeg";
 
 export default function Hero() {
@@ -74,7 +74,7 @@ export default function Hero() {
                      onClick={() => handleScroll("#contato")}
                      className="flex items-center gap-2 border border-gray-700 hover:border-accent-light text-gray-300 hover:text-accent-light px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer"
                   >
-                     <HiMail className="text-lg" />
+                     <HiChatAlt2 className="text-lg" />
                      Entrar em Contato
                   </button>
                </motion.div>
